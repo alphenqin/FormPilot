@@ -1,0 +1,1153 @@
+{
+  "contract_version": 1,
+  "method": "POST",
+  "path": "/v1/profile/parse",
+  "success_status": 202,
+  "request": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "client_request_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "document_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "document_revision": {
+        "const": 1,
+        "type": "number"
+      },
+      "source_blocks": {
+        "minItems": 1,
+        "maxItems": 200,
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "block_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "document_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "document_revision": {
+              "const": 1,
+              "type": "number"
+            },
+            "page": {
+              "anyOf": [
+                {
+                  "minimum": 1,
+                  "maximum": 100,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "text": {
+              "minLength": 1,
+              "maxLength": 1600,
+              "type": "string"
+            },
+            "start": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "end": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "block_id",
+            "document_id",
+            "document_revision",
+            "page",
+            "text",
+            "start",
+            "end"
+          ]
+        }
+      },
+      "consent": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "granted": {
+            "const": true,
+            "type": "boolean"
+          },
+          "purpose": {
+            "const": "resume_parse",
+            "type": "string"
+          },
+          "provider": {
+            "maxLength": 80,
+            "type": "string"
+          },
+          "model": {
+            "maxLength": 100,
+            "type": "string"
+          },
+          "policy_url": {
+            "maxLength": 500,
+            "type": "string"
+          },
+          "blocks_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "granted_at": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "granted",
+          "purpose",
+          "provider",
+          "model",
+          "policy_url",
+          "blocks_hash",
+          "granted_at"
+        ]
+      }
+    },
+    "required": [
+      "client_request_id",
+      "document_id",
+      "document_revision",
+      "source_blocks",
+      "consent"
+    ]
+  },
+  "response": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "data": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "job_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "running",
+                    "type": "string"
+                  },
+                  {
+                    "const": "succeeded",
+                    "type": "string"
+                  },
+                  {
+                    "const": "failed",
+                    "type": "string"
+                  }
+                ]
+              },
+              "result": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "extraction": {
+                        "additionalProperties": false,
+                        "type": "object",
+                        "properties": {
+                          "candidates": {
+                            "maxItems": 200,
+                            "type": "array",
+                            "items": {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "category": {
+                                  "anyOf": [
+                                    {
+                                      "const": "basic",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "education",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "internship",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "project",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "skill",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "certificate",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "intention",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "path": {
+                                  "anyOf": [
+                                    {
+                                      "const": "basic.name",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "basic.gender",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "basic.phone",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "basic.email",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "basic.current_city",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "education.school",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "education.major",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "education.degree",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "education.start_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "education.end_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work.company",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work.position",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work.department",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work.start_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work.end_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "work.description",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "internship.company",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "internship.position",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "internship.start_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "internship.end_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "internship.description",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "project.name",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "project.role",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "project.start_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "project.end_date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "project.description",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "skill.name",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "skill.level",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "certificate.name",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "certificate.date",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "certificate.number",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "intention.city",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "intention.industry",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "intention.position",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "intention.salary",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "value": {
+                                  "anyOf": [
+                                    {
+                                      "minLength": 1,
+                                      "maxLength": 3000,
+                                      "type": "string"
+                                    },
+                                    {
+                                      "additionalProperties": false,
+                                      "type": "object",
+                                      "properties": {
+                                        "value": {
+                                          "maxLength": 10,
+                                          "type": "string"
+                                        },
+                                        "precision": {
+                                          "anyOf": [
+                                            {
+                                              "const": "year",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "const": "month",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "const": "day",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "const": "present",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "required": ["value", "precision"]
+                                    }
+                                  ]
+                                },
+                                "entity_key": {
+                                  "minLength": 1,
+                                  "maxLength": 80,
+                                  "type": "string"
+                                },
+                                "block_id": {
+                                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                                  "type": "string"
+                                },
+                                "quote": {
+                                  "minLength": 1,
+                                  "maxLength": 1600,
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "category",
+                                "path",
+                                "value",
+                                "entity_key",
+                                "block_id",
+                                "quote"
+                              ]
+                            }
+                          }
+                        },
+                        "required": ["candidates"]
+                      },
+                      "usage": {
+                        "additionalProperties": false,
+                        "type": "object",
+                        "properties": {
+                          "input_tokens": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "output_tokens": {
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "required": ["input_tokens", "output_tokens"]
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "model": {
+                        "type": "string"
+                      },
+                      "duration_ms": {
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "extraction",
+                      "usage",
+                      "provider",
+                      "model",
+                      "duration_ms"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "error_code": {
+                "anyOf": [
+                  {
+                    "maxLength": 80,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "expires_at": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "job_id",
+              "status",
+              "result",
+              "error_code",
+              "expires_at"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "error": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "code": {
+                "anyOf": [
+                  {
+                    "const": "INVALID_REQUEST",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNAUTHORIZED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCOPE_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONSENT_REQUIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REFERENCE_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SERVICE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "INTERNAL_ERROR",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAYLOAD_TOO_LARGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RATE_LIMITED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REVISION_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_PLAN",
+                    "type": "string"
+                  },
+                  {
+                    "const": "IDEMPOTENCY_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_DOCUMENT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EVIDENCE_INVALID",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RULE_VIOLATION",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_INVALID_OUTPUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_TIMEOUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_REFUSED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAGE_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_SNAPSHOT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "FIELD_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PERMISSION_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_PAGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCAN_LIMIT_EXCEEDED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SNAPSHOT_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_NOT_AVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STORAGE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "TASK_INTERRUPTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_LOCKED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "USER_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "VALUE_NOT_PERSISTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SITE_VALIDATION_FAILED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONTROL_UNSUPPORTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "LOCATOR_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_INTERRUPTED",
+                    "type": "string"
+                  }
+                ]
+              },
+              "message": {
+                "maxLength": 200,
+                "type": "string"
+              },
+              "retryable": {
+                "type": "boolean"
+              },
+              "details": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "required": ["code", "message", "retryable", "details"]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  },
+  "completed_result": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "extraction": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "maxItems": 200,
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "category": {
+                  "anyOf": [
+                    {
+                      "const": "basic",
+                      "type": "string"
+                    },
+                    {
+                      "const": "education",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work",
+                      "type": "string"
+                    },
+                    {
+                      "const": "internship",
+                      "type": "string"
+                    },
+                    {
+                      "const": "project",
+                      "type": "string"
+                    },
+                    {
+                      "const": "skill",
+                      "type": "string"
+                    },
+                    {
+                      "const": "certificate",
+                      "type": "string"
+                    },
+                    {
+                      "const": "intention",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "path": {
+                  "anyOf": [
+                    {
+                      "const": "basic.name",
+                      "type": "string"
+                    },
+                    {
+                      "const": "basic.gender",
+                      "type": "string"
+                    },
+                    {
+                      "const": "basic.phone",
+                      "type": "string"
+                    },
+                    {
+                      "const": "basic.email",
+                      "type": "string"
+                    },
+                    {
+                      "const": "basic.current_city",
+                      "type": "string"
+                    },
+                    {
+                      "const": "education.school",
+                      "type": "string"
+                    },
+                    {
+                      "const": "education.major",
+                      "type": "string"
+                    },
+                    {
+                      "const": "education.degree",
+                      "type": "string"
+                    },
+                    {
+                      "const": "education.start_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "education.end_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work.company",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work.position",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work.department",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work.start_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work.end_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "work.description",
+                      "type": "string"
+                    },
+                    {
+                      "const": "internship.company",
+                      "type": "string"
+                    },
+                    {
+                      "const": "internship.position",
+                      "type": "string"
+                    },
+                    {
+                      "const": "internship.start_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "internship.end_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "internship.description",
+                      "type": "string"
+                    },
+                    {
+                      "const": "project.name",
+                      "type": "string"
+                    },
+                    {
+                      "const": "project.role",
+                      "type": "string"
+                    },
+                    {
+                      "const": "project.start_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "project.end_date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "project.description",
+                      "type": "string"
+                    },
+                    {
+                      "const": "skill.name",
+                      "type": "string"
+                    },
+                    {
+                      "const": "skill.level",
+                      "type": "string"
+                    },
+                    {
+                      "const": "certificate.name",
+                      "type": "string"
+                    },
+                    {
+                      "const": "certificate.date",
+                      "type": "string"
+                    },
+                    {
+                      "const": "certificate.number",
+                      "type": "string"
+                    },
+                    {
+                      "const": "intention.city",
+                      "type": "string"
+                    },
+                    {
+                      "const": "intention.industry",
+                      "type": "string"
+                    },
+                    {
+                      "const": "intention.position",
+                      "type": "string"
+                    },
+                    {
+                      "const": "intention.salary",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "value": {
+                  "anyOf": [
+                    {
+                      "minLength": 1,
+                      "maxLength": 3000,
+                      "type": "string"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "maxLength": 10,
+                          "type": "string"
+                        },
+                        "precision": {
+                          "anyOf": [
+                            {
+                              "const": "year",
+                              "type": "string"
+                            },
+                            {
+                              "const": "month",
+                              "type": "string"
+                            },
+                            {
+                              "const": "day",
+                              "type": "string"
+                            },
+                            {
+                              "const": "present",
+                              "type": "string"
+                            }
+                          ]
+                        }
+                      },
+                      "required": ["value", "precision"]
+                    }
+                  ]
+                },
+                "entity_key": {
+                  "minLength": 1,
+                  "maxLength": 80,
+                  "type": "string"
+                },
+                "block_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "quote": {
+                  "minLength": 1,
+                  "maxLength": 1600,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "category",
+                "path",
+                "value",
+                "entity_key",
+                "block_id",
+                "quote"
+              ]
+            }
+          }
+        },
+        "required": ["candidates"]
+      },
+      "usage": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "input_tokens": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "output_tokens": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": ["input_tokens", "output_tokens"]
+      },
+      "provider": {
+        "type": "string"
+      },
+      "model": {
+        "type": "string"
+      },
+      "duration_ms": {
+        "minimum": 0,
+        "type": "number"
+      }
+    },
+    "required": ["extraction", "usage", "provider", "model", "duration_ms"]
+  },
+  "failure": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string"
+      },
+      "data": {
+        "type": "null"
+      },
+      "error": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "const": "INVALID_REQUEST",
+                "type": "string"
+              },
+              {
+                "const": "UNAUTHORIZED",
+                "type": "string"
+              },
+              {
+                "const": "SCOPE_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "CONSENT_REQUIRED",
+                "type": "string"
+              },
+              {
+                "const": "REFERENCE_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "SERVICE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "INTERNAL_ERROR",
+                "type": "string"
+              },
+              {
+                "const": "PAYLOAD_TOO_LARGE",
+                "type": "string"
+              },
+              {
+                "const": "RATE_LIMITED",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "REVISION_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "STALE_PLAN",
+                "type": "string"
+              },
+              {
+                "const": "IDEMPOTENCY_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_DOCUMENT",
+                "type": "string"
+              },
+              {
+                "const": "EVIDENCE_INVALID",
+                "type": "string"
+              },
+              {
+                "const": "RULE_VIOLATION",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_INVALID_OUTPUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_TIMEOUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_REFUSED",
+                "type": "string"
+              },
+              {
+                "const": "PAGE_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "STALE_SNAPSHOT",
+                "type": "string"
+              },
+              {
+                "const": "FIELD_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "PERMISSION_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_PAGE",
+                "type": "string"
+              },
+              {
+                "const": "SCAN_LIMIT_EXCEEDED",
+                "type": "string"
+              },
+              {
+                "const": "SNAPSHOT_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_NOT_AVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "STORAGE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "TASK_INTERRUPTED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_LOCKED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "USER_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "VALUE_NOT_PERSISTED",
+                "type": "string"
+              },
+              {
+                "const": "SITE_VALIDATION_FAILED",
+                "type": "string"
+              },
+              {
+                "const": "CONTROL_UNSUPPORTED",
+                "type": "string"
+              },
+              {
+                "const": "LOCATOR_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_INTERRUPTED",
+                "type": "string"
+              }
+            ]
+          },
+          "message": {
+            "maxLength": 200,
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "details": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "required": ["code", "message", "retryable", "details"]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  }
+}

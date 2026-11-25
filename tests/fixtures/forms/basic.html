@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>基础网申表单 · 合成测试</title
+  ><style>
+    body {
+      font: 16px system-ui;
+      max-width: 760px;
+      margin: 30px auto;
+    }
+    label {
+      display: block;
+      margin: 14px 0;
+    }
+    input,
+    select,
+    textarea {
+      padding: 8px;
+    }
+    fieldset {
+      margin: 18px 0;
+    }
+    textarea {
+      display: block;
+      width: 90%;
+    }
+  </style>
+  <h1>基础网申模板（完全虚构）</h1>
+  <p>UNRELATED_PAGE_PRIVATE_SENTINEL</p>
+  <form id="application">
+    <fieldset>
+      <legend>基本信息</legend>
+      <label for="full-name">姓名</label
+      ><input
+        id="full-name"
+        name="full_name"
+        required
+        minlength="2"
+        maxlength="30"
+        placeholder="请输入真实姓名"
+        value="合成测试同学"
+      />
+      <label
+        >电子邮箱<input
+          type="email"
+          name="email"
+          required
+          maxlength="100"
+          pattern=".+@.+"
+      /></label>
+      <label
+        >联系电话<input
+          type="tel"
+          name="phone"
+          pattern="[0-9+ -]{6,20}"
+          value="13800000000"
+      /></label>
+      <label
+        >出生日期<input
+          type="date"
+          name="birth"
+          min="1990-01-01"
+          max="2030-12-31"
+          required
+          value="2000-01-02"
+      /></label>
+      <label
+        >最高学历<select name="degree" required>
+          <option value="" disabled>请选择</option>
+          <option value="bachelor" selected>本科</option>
+          <option value="master">硕士</option>
+        </select></label
+      >
+      <label
+        >个人简介<textarea name="summary" minlength="10" maxlength="500">
+这是完全虚构的自动化测试简介</textarea
+        >
+      </label>
+      <label
+        ><input
+          type="checkbox"
+          name="consent"
+          value="agreed"
+          required
+        />同意招聘资料处理</label
+      >
+    </fieldset>
+    <fieldset>
+      <legend>到岗时间</legend>
+      <label
+        ><input type="radio" name="availability" value="soon" />一周内</label
+      ><label
+        ><input
+          type="radio"
+          name="availability"
+          value="later"
+          checked
+        />一个月内</label
+      >
+    </fieldset>
+    <label
+      >毕业月份<input
+        type="month"
+        name="graduation"
+        value="2024-06"
+        max="2027-12"
+    /></label>
+    <label
+      >简历附件<input
+        type="file"
+        name="resume"
+        accept=".pdf,.txt"
+        multiple
+        required
+    /></label>
+    <label>信息来源<input name="source" value="公开招聘" readonly /></label>
+    <label
+      >职位编码<input name="job_code" value="SYNTHETIC-01" disabled
+    /></label>
+    <input
+      type="hidden"
+      name="csrf"
+      value="HIDDEN_CSRF_SECRET_SENTINEL"
+    /><input
+      name="css_hidden"
+      style="display: none"
+      value="CSS_HIDDEN_SECRET_SENTINEL"
+    />
+    <label
+      >登录密码<input type="password" value="PASSWORD_SECRET_SENTINEL" /></label
+    ><label
+      >验证码<input
+        autocomplete="one-time-code"
+        value="OTP_SECRET_SENTINEL" /></label
+    ><label
+      >银行卡号<input autocomplete="cc-number" value="CARD_SECRET_SENTINEL"
+    /></label>
+    <input type="submit" value="提交申请" />
+  </form>
+  <script>
+    window.writeEvents = 0;
+    window.submits = 0;
+    document.addEventListener('input', () => window.writeEvents++);
+    document.addEventListener('change', () => window.writeEvents++);
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      window.submits++;
+    });
+  </script>
+</html>

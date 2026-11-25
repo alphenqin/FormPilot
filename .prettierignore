@@ -1,0 +1,12 @@
+node_modules
+**/dist
+pnpm-lock.yaml
+test-results
+playwright-report
+docs/PRD.md
+docs/TECHNICAL_DESIGN.md
+docs/ROADMAP.md
+docs/reports/2026-11-16-planning.md
+Readme.md
+
+.runtime

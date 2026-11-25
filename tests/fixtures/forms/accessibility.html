@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>约束与无障碍 · 合成测试</title
+  ><style>
+    body {
+      font: 16px system-ui;
+      max-width: 760px;
+      margin: 30px auto;
+    }
+    label {
+      display: block;
+      margin: 14px 0;
+    }
+    input,
+    select {
+      padding: 8px;
+    }
+    fieldset {
+      margin: 18px 0;
+    }
+  </style>
+  <h1>约束与无障碍模板（完全虚构）</h1>
+  <form id="education-form">
+    <fieldset>
+      <legend>教育经历</legend>
+      <input
+        name="school"
+        aria-label="学校"
+        aria-required="true"
+        value="示例大学"
+      /><label
+        >技能<select name="skills" multiple>
+          <option value="js" selected>JavaScript</option>
+          <optgroup label="其他" disabled>
+            <option value="go">Go</option>
+          </optgroup>
+          <option value="ts" selected>TypeScript</option>
+        </select></label
+      ><label
+        >工作年限<input
+          type="number"
+          name="years"
+          min="0"
+          max="30"
+          step="0.5"
+          value="2.5" /></label
+      ><label
+        >意向城市<select id="many-options" name="many_options"></select
+      ></label>
+      <div contenteditable="true" role="textbox" aria-label="富文本个人描述">
+        EDITABLE_PRIVATE_SENTINEL
+      </div>
+    </fieldset>
+    <fieldset disabled>
+      <legend>
+        禁用区域 <input aria-label="图例中可用输入" name="legend-exception" />
+      </legend>
+      <label>不可用字段<input name="fieldset-disabled" value="示例" /></label>
+    </fieldset>
+    <fieldset>
+      <legend>支付信息</legend>
+      <input name="generic-private" value="PAYMENT_PRIVATE_SENTINEL" />
+    </fieldset>
+    <label>邮政编码<input name="postcode" value="100000" /></label
+    ><input name="placeholder-only" placeholder="请输入籍贯" /><input
+      name="missing-label"
+    />
+  </form>
+  <label for="external">表单外的学历</label
+  ><input
+    id="external"
+    name="external-degree"
+    form="education-form"
+    value="本科"
+  />
+  <script>
+    const select = document.getElementById('many-options');
+    for (let i = 0; i < 205; i++) {
+      const option = document.createElement('option');
+      option.value = 'choice-' + i;
+      option.textContent = '城市' + i;
+      select.append(option);
+    }
+  </script>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>M4 原生执行测试（合成）</title>
+  <style>
+    body {
+      font: 16px sans-serif;
+      max-width: 800px;
+      margin: 30px;
+    }
+    label {
+      display: block;
+      margin: 12px;
+    }
+    input,
+    select,
+    textarea {
+      padding: 6px;
+    }
+  </style>
+  <h1>完全虚构的执行测试表单</h1>
+  <form id="application">
+    <fieldset>
+      <legend>基本信息</legend>
+      <label
+        >姓名<input id="name" name="name" required value="网页原姓名"
+      /></label>
+      <label
+        >电子邮箱<input id="email" name="email" type="email" required
+      /></label>
+      <label>联系电话<input id="phone" name="phone" type="tel" /></label>
+      <label>现居城市<input id="city" name="city" /></label>
+      <label
+        >意向城市<select id="intention" name="intention" required>
+          <option value="" selected disabled>请选择</option>
+          <option value="HZ">杭州</option>
+          <option value="BJ">北京</option>
+        </select></label
+      >
+      <label>开始日期<input id="date" type="date" /></label
+      ><label>结束月份<input id="month" type="month" /></label>
+      <label>个人介绍<textarea id="description"></textarea></label>
+      <label
+        >兴趣方向<select id="multiple" multiple>
+          <option value="a">研发</option>
+          <option value="b">产品</option>
+          <option value="c">其他</option>
+        </select></label
+      >
+      <label><input id="contact" type="checkbox" />是否允许联系（测试）</label>
+      <fieldset>
+        <legend>到岗时间</legend>
+        <label
+          ><input type="radio" name="availability" value="soon" />一周内</label
+        ><label
+          ><input
+            type="radio"
+            name="availability"
+            value="later"
+            checked
+          />一个月内</label
+        >
+      </fieldset>
+      <label>附件<input id="file" type="file" /></label
+      ><label
+        ><input id="consent" type="checkbox" required />同意招聘隐私条款</label
+      >
+      <input
+        id="password"
+        type="password"
+        aria-label="密码"
+        value="M4_PASSWORD_SENTINEL"
+      /><input
+        id="captcha"
+        aria-label="验证码"
+        value="M4_CAPTCHA_SENTINEL"
+      /><button id="submit" type="submit">提交（测试禁止）</button>
+    </fieldset>
+  </form>
+  <script>
+    window.writeEvents = 0;
+    window.submits = 0;
+    window.scenario = new URL(location.href).searchParams.get('scenario') || '';
+    document.addEventListener('input', () => window.writeEvents++);
+    document.addEventListener('change', () => window.writeEvents++);
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      window.submits++;
+    });
+    document.querySelector('#email').addEventListener('input', (event) => {
+      if (window.scenario === 'reset')
+        setTimeout(() => {
+          event.target.value = '';
+        }, 160);
+      if (window.scenario === 'invalid')
+        event.target.setCustomValidity('站点测试：需要人工核实');
+    });
+    document.querySelector('#name').addEventListener('input', () => {
+      if (window.scenario === 'structure')
+        setTimeout(() => {
+          const input = document.createElement('input');
+          input.setAttribute('aria-label', '动态新增字段');
+          document.querySelector('form').append(input);
+        }, 150);
+      if (window.scenario === 'final-reset')
+        setTimeout(() => {
+          document.querySelector('#name').value = '';
+        }, 850);
+    });
+  </script>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>M4 标准模板 education</title
+  ><style>
+    body {
+      font: 16px sans-serif;
+      max-width: 800px;
+      margin: 24px;
+    }
+    label {
+      display: block;
+      margin: 12px;
+    }
+    input,
+    select {
+      padding: 7px;
+    }
+  </style>
+  <h1>完全虚构的 M4 标准模板 education</h1>
+  <form>
+    <fieldset>
+      <legend>基本信息</legend>
+      <label>姓名<input id="name" required /></label
+      ><label>电子邮箱<input id="email" type="email" required /></label>
+    </fieldset>
+    <fieldset>
+      <legend>教育经历</legend>
+      <label>学校<input id="school" required /></label
+      ><label>专业<input id="major" required /></label
+      ><label
+        >学历<select id="degree" required>
+          <option value="" selected disabled>请选择</option>
+          <option value="BA">本科</option>
+          <option value="MA">硕士</option>
+        </select></label
+      ><label>开始时间<input id="edu_start" type="month" required /></label
+      ><label>结束时间<input id="edu_end" type="month" required /></label
+      ><label>结束时间<input id="edu_end_day" type="date" required /></label>
+    </fieldset>
+    <label>简历附件<input type="file" id="attachment" /></label
+    ><label><input type="checkbox" id="terms" required />同意招聘隐私条款</label
+    ><input
+      type="password"
+      aria-label="密码"
+      value="STANDARD_SECRET_SENTINEL"
+    /><button type="submit">提交申请（禁止）</button>
+  </form>
+  <script>
+    window.writeEvents = 0;
+    window.submits = 0;
+    document.addEventListener('input', () => window.writeEvents++);
+    document.addEventListener('change', () => window.writeEvents++);
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.submits++;
+    });
+  </script>
+</html>

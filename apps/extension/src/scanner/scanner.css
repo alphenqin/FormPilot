@@ -1,0 +1,88 @@
+.scanner {
+  overflow-wrap: anywhere;
+}
+.scanner .scan-small {
+  font-size: 12px;
+  color: #657995;
+}
+.scan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scanner button {
+  margin: 3px 0;
+  font-size: 12px;
+}
+.scanner select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cbd5e5;
+  border-radius: 6px;
+  background: white;
+  color: #243b60;
+}
+.scan-status {
+  font-size: 12px;
+  color: #385d9a;
+  background: #edf3ff;
+  padding: 10px;
+  border-radius: 6px;
+}
+.scan-summary {
+  font-weight: 650;
+  font-size: 14px;
+}
+.scan-warning {
+  font-size: 12px;
+  color: #8a5a1e;
+  background: #fff5df;
+  border-radius: 5px;
+  padding: 9px;
+}
+.scan-group {
+  border-top: 1px solid #dce5f2;
+  margin-top: 14px;
+}
+.scan-group h3 {
+  font-size: 14px;
+}
+.scan-field {
+  border: 1px solid #dce5f2;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 12px;
+  background: #fff;
+}
+.scan-field-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+.scan-field-heading span {
+  font-size: 11px;
+  color: #627b9c;
+  white-space: nowrap;
+}
+.scan-value {
+  font-size: 13px;
+  white-space: pre-wrap;
+  max-height: 150px;
+  overflow: auto;
+}
+.scanner summary {
+  font-size: 12px;
+  color: #45659a;
+  cursor: pointer;
+}
+.scanner details {
+  margin-top: 10px;
+}
+.scanner details ul {
+  padding-left: 20px;
+  font-size: 12px;
+}
+.scanner label {
+  font-size: 12px;
+}

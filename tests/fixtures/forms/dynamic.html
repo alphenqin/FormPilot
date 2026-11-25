@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>动态经历 · 合成测试</title
+  ><style>
+    body {
+      font: 16px system-ui;
+      max-width: 760px;
+      margin: 30px auto;
+    }
+    label {
+      display: block;
+      margin: 14px 0;
+    }
+    input {
+      padding: 8px;
+    }
+    section,
+    fieldset {
+      border: 1px solid #bbc;
+      padding: 16px;
+      margin: 18px 0;
+    }
+    iframe {
+      width: 90%;
+      height: 100px;
+    }
+  </style>
+  <h1>动态经历模板（完全虚构）</h1>
+  <form id="work-form">
+    <section data-form-group>
+      <h2>工作经历一</h2>
+      <label
+        >公司名称<input
+          id="company-one"
+          name="company"
+          value="示例公司甲" /></label
+      ><label>职位<input name="position" value="后端工程师" /></label>
+    </section>
+    <section data-form-group>
+      <h2>工作经历二</h2>
+      <label
+        >公司名称<input
+          id="company-two"
+          name="company"
+          value="示例公司乙" /></label
+      ><label>职位<input name="position" value="前端工程师" /></label>
+    </section>
+    <div
+      role="combobox"
+      aria-label="工作城市"
+      aria-expanded="false"
+      tabindex="0"
+    >
+      请选择城市<input type="hidden" value="CUSTOM_HIDDEN_SECRET_SENTINEL" />
+    </div>
+    <span id="website-label">个人网站</span><span id="website-hint">链接</span
+    ><input
+      aria-labelledby="website-label website-hint"
+      aria-describedby="website-description"
+      name="website"
+      aria-required="true"
+    />
+    <p id="website-description">仅填写公开链接</p>
+    <label for="duplicate">重复标识字段</label
+    ><input id="duplicate" name="duplicate-one" /><input
+      id="duplicate"
+      name="duplicate-two"
+    />
+  </form>
+  <button id="add-experience" type="button">新增经历</button
+  ><button id="replace-company" type="button">替换同名节点</button
+  ><button id="route-change" type="button">切换步骤</button>
+  <div id="decoration">装饰性文字</div>
+  <div id="shadow-host"></div>
+  <iframe src="/m2-fixtures/embedded.html" title="同源嵌入页"></iframe
+  ><iframe
+    src="http://localhost:3000/m2-fixtures/embedded.html"
+    title="不同 origin 嵌入页"
+  ></iframe>
+  <script>
+    document
+      .getElementById('shadow-host')
+      .attachShadow({ mode: 'open' }).innerHTML =
+      '<label>影子内容<input value="SHADOW_PRIVATE_SENTINEL"></label>';
+    document.getElementById('add-experience').onclick = () => {
+      const group = document.createElement('fieldset');
+      group.innerHTML =
+        '<legend>工作经历三</legend><label>公司名称<input name="company" value="示例公司丙"></label>';
+      document.querySelector('form').append(group);
+    };
+    document.getElementById('replace-company').onclick = () => {
+      const old = document.getElementById('company-one');
+      old.replaceWith(old.cloneNode(true));
+    };
+    document.getElementById('route-change').onclick = () =>
+      history.pushState(
+        {},
+        '',
+        location.pathname +
+          '?step=2&token=URL_SECRET_SENTINEL#private=HASH_SECRET_SENTINEL',
+      );
+  </script>
+</html>

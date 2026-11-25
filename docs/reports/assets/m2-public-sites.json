@@ -1,0 +1,51 @@
+{
+  "checked_at": "2026-11-16T10:14:32.144Z",
+  "scope": "public-entry-only-no-login-no-values-no-submission",
+  "results": [
+    {
+      "site": "tencent",
+      "url": "https://careers.tencent.com/",
+      "status": 200,
+      "title": "Home | Tencent Careers",
+      "origin": "https://careers.tencent.com",
+      "path": "/en-us/home.html",
+      "forms": 0,
+      "native_controls": 1,
+      "custom_controls": 0,
+      "password_controls": 0,
+      "iframes": 1,
+      "login_entry_present": false,
+      "application_form_verified": false
+    },
+    {
+      "site": "bytedance",
+      "url": "https://jobs.bytedance.com/",
+      "status": 200,
+      "title": "字节跳动招聘官网｜字节跳动社招",
+      "origin": "https://jobs.bytedance.com",
+      "path": "/",
+      "forms": 0,
+      "native_controls": 0,
+      "custom_controls": 0,
+      "password_controls": 0,
+      "iframes": 0,
+      "login_entry_present": true,
+      "application_form_verified": false
+    },
+    {
+      "site": "xiaomi",
+      "url": "https://hr.xiaomi.com/opportunities.html",
+      "status": 200,
+      "title": "探索机会 | 小米招聘",
+      "origin": "https://hr.xiaomi.com",
+      "path": "/website/opportunities.html",
+      "forms": 1,
+      "native_controls": 2,
+      "custom_controls": 0,
+      "password_controls": 0,
+      "iframes": 0,
+      "login_entry_present": false,
+      "application_form_verified": false
+    }
+  ]
+}

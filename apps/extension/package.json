@@ -1,0 +1,19 @@
+{
+  "name": "@formpilot/extension",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && node ../../scripts/build-content.mjs"
+  },
+  "dependencies": {
+    "@formpilot/contracts": "workspace:*",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "@formpilot/domain": "workspace:*",
+    "@formpilot/local-store": "workspace:*",
+    "pdfjs-dist": "5.4.394",
+    "@sinclair/typebox": "0.34.41",
+    "@formpilot/browser-engine": "workspace:*"
+  }
+}

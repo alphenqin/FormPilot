@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>M4 标准模板 basic</title
+  ><style>
+    body {
+      font: 16px sans-serif;
+      max-width: 800px;
+      margin: 24px;
+    }
+    label {
+      display: block;
+      margin: 12px;
+    }
+    input,
+    select {
+      padding: 7px;
+    }
+  </style>
+  <h1>完全虚构的 M4 标准模板 basic</h1>
+  <form>
+    <fieldset>
+      <legend>基本信息</legend>
+      <label>姓名<input id="name" required value="页面原有姓名" /></label
+      ><label>电子邮箱<input id="email" type="email" required /></label
+      ><label>联系电话<input id="phone" type="tel" required /></label
+      ><label>现居城市<input id="current_city" required /></label
+      ><label
+        >意向城市<select id="intention_city" required>
+          <option value="" disabled selected>请选择</option>
+          <option value="HZ">杭州</option>
+          <option value="BJ">北京</option>
+        </select></label
+      ><label>可到岗天数<input id="availability_days" required /></label>
+    </fieldset>
+    <label>简历附件<input type="file" id="attachment" /></label
+    ><label><input type="checkbox" id="terms" required />同意招聘隐私条款</label
+    ><input
+      type="password"
+      aria-label="密码"
+      value="STANDARD_SECRET_SENTINEL"
+    /><button type="submit">提交申请（禁止）</button>
+  </form>
+  <script>
+    window.writeEvents = 0;
+    window.submits = 0;
+    document.addEventListener('input', () => window.writeEvents++);
+    document.addEventListener('change', () => window.writeEvents++);
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.submits++;
+    });
+  </script>
+</html>

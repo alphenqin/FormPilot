@@ -1,0 +1,32 @@
+{
+  "dataset": "synthetic-1",
+  "kind": "30 synthetic resume/template component tasks; reviewed plans; controlled model; actual Chromium DOM",
+  "tasks": 30,
+  "correct_first_write": {
+    "numerator": 220,
+    "denominator": 220,
+    "ratio": 1
+  },
+  "correct_automatic_coverage": {
+    "numerator": 220,
+    "denominator": 240,
+    "ratio": 0.9166666666666666
+  },
+  "remaining_ask_fields": 20,
+  "manual_fields": 80,
+  "user_review_actions": 30,
+  "zero_tolerance_errors": [],
+  "auto_submits": 0,
+  "task_latency_ms": {
+    "p50": 3598,
+    "p95": 5165
+  },
+  "field_checkpoint_latency_ms": {
+    "samples": 220,
+    "p50": 507.69999998807907,
+    "p95": 512
+  },
+  "stable_window_ms": 500,
+  "real_resume_acceptance": false,
+  "real_site_acceptance": false
+}

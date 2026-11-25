@@ -1,0 +1,19 @@
+{
+  "name": "@formpilot/api",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=../../.env src/server.ts",
+    "build": "node ../../scripts/build-api.mjs",
+    "start": "node --env-file-if-exists=../../.env dist/server.js"
+  },
+  "dependencies": {
+    "@formpilot/contracts": "workspace:*",
+    "@formpilot/config": "workspace:*",
+    "@formpilot/ai": "workspace:*",
+    "fastify": "5.6.2",
+    "@sinclair/typebox": "0.34.41",
+    "@formpilot/domain": "workspace:*"
+  }
+}

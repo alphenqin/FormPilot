@@ -1,0 +1,877 @@
+{
+  "contract_version": 1,
+  "method": "POST",
+  "path": "/v1/career/jd/parse",
+  "success_status": 202,
+  "request": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "schema_version": {
+        "const": 1,
+        "type": "number"
+      },
+      "client_request_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "source": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "text": {
+            "minLength": 1,
+            "maxLength": 20000,
+            "type": "string"
+          },
+          "title_hint": {
+            "maxLength": 200,
+            "type": "string"
+          },
+          "page_url": {
+            "anyOf": [
+              {
+                "maxLength": 500,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "captured_at": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "method": {
+            "anyOf": [
+              {
+                "const": "paste",
+                "type": "string"
+              },
+              {
+                "const": "page",
+                "type": "string"
+              }
+            ]
+          },
+          "truncated": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "source_id",
+          "text",
+          "title_hint",
+          "page_url",
+          "captured_at",
+          "method"
+        ]
+      },
+      "consent": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "granted": {
+            "const": true,
+            "type": "boolean"
+          },
+          "purpose": {
+            "const": "jd_parse",
+            "type": "string"
+          },
+          "provider": {
+            "minLength": 1,
+            "maxLength": 80,
+            "type": "string"
+          },
+          "model": {
+            "minLength": 1,
+            "maxLength": 100,
+            "type": "string"
+          },
+          "policy_url": {
+            "maxLength": 500,
+            "type": "string"
+          },
+          "payload_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "granted_at": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "granted",
+          "purpose",
+          "provider",
+          "model",
+          "policy_url",
+          "payload_hash",
+          "granted_at"
+        ]
+      }
+    },
+    "required": ["schema_version", "client_request_id", "source", "consent"]
+  },
+  "response": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "data": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "job_id": {
+                "pattern": "^[a-f0-9]{32}$",
+                "type": "string"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "running",
+                    "type": "string"
+                  },
+                  {
+                    "const": "succeeded",
+                    "type": "string"
+                  },
+                  {
+                    "const": "failed",
+                    "type": "string"
+                  }
+                ]
+              },
+              "result": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "schema_version": {
+                        "const": 1,
+                        "type": "number"
+                      },
+                      "source_hash": {
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      },
+                      "attributes": {
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "quote": {
+                              "minLength": 1,
+                              "maxLength": 1200,
+                              "type": "string"
+                            },
+                            "start": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "end": {
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "attribute_id": {
+                              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                              "type": "string"
+                            },
+                            "key": {
+                              "anyOf": [
+                                {
+                                  "const": "title",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "company",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "location",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "value": {
+                              "minLength": 1,
+                              "maxLength": 200,
+                              "type": "string"
+                            },
+                            "confirmed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "quote",
+                            "start",
+                            "end",
+                            "attribute_id",
+                            "key",
+                            "value",
+                            "confirmed"
+                          ]
+                        }
+                      },
+                      "requirements": {
+                        "maxItems": 40,
+                        "type": "array",
+                        "items": {
+                          "additionalProperties": false,
+                          "type": "object",
+                          "properties": {
+                            "quote": {
+                              "minLength": 1,
+                              "maxLength": 1200,
+                              "type": "string"
+                            },
+                            "start": {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "end": {
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "requirement_id": {
+                              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                              "type": "string"
+                            },
+                            "kind": {
+                              "anyOf": [
+                                {
+                                  "const": "education",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "experience",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "skill",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "location",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "major",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "responsibility",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "other",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "priority": {
+                              "anyOf": [
+                                {
+                                  "const": "hard",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "core",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": "preferred",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "term": {
+                              "anyOf": [
+                                {
+                                  "maxLength": 100,
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            },
+                            "criterion": {
+                              "additionalProperties": false,
+                              "type": "object",
+                              "properties": {
+                                "type": {
+                                  "anyOf": [
+                                    {
+                                      "const": "degree_min",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "degree_exact",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "years_min",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "skill",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "location_intention",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "location_current",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "major_exact",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "const": "unknown",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "value": {
+                                  "anyOf": [
+                                    {
+                                      "maxLength": 200,
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                },
+                                "min_years": {
+                                  "anyOf": [
+                                    {
+                                      "minimum": 0,
+                                      "maximum": 50,
+                                      "type": "number"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                },
+                                "level": {
+                                  "anyOf": [
+                                    {
+                                      "anyOf": [
+                                        {
+                                          "const": "familiar",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "const": "proficient",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "const": "expert",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                },
+                                "reason": {
+                                  "anyOf": [
+                                    {
+                                      "maxLength": 100,
+                                      "type": "string"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "type",
+                                "value",
+                                "min_years",
+                                "level",
+                                "reason"
+                              ]
+                            },
+                            "confirmed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "quote",
+                            "start",
+                            "end",
+                            "requirement_id",
+                            "kind",
+                            "priority",
+                            "term",
+                            "criterion",
+                            "confirmed"
+                          ]
+                        }
+                      },
+                      "provider": {
+                        "maxLength": 80,
+                        "type": "string"
+                      },
+                      "model": {
+                        "maxLength": 100,
+                        "type": "string"
+                      },
+                      "usage": {
+                        "additionalProperties": false,
+                        "type": "object",
+                        "properties": {
+                          "input_tokens": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "output_tokens": {
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "required": ["input_tokens", "output_tokens"]
+                      },
+                      "duration_ms": {
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "schema_version",
+                      "source_hash",
+                      "attributes",
+                      "requirements",
+                      "provider",
+                      "model",
+                      "usage",
+                      "duration_ms"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "error_code": {
+                "anyOf": [
+                  {
+                    "maxLength": 80,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "expires_at": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "job_id",
+              "status",
+              "result",
+              "error_code",
+              "expires_at"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "error": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "code": {
+                "anyOf": [
+                  {
+                    "const": "INVALID_REQUEST",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNAUTHORIZED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCOPE_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONSENT_REQUIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REFERENCE_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SERVICE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "INTERNAL_ERROR",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAYLOAD_TOO_LARGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RATE_LIMITED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REVISION_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_PLAN",
+                    "type": "string"
+                  },
+                  {
+                    "const": "IDEMPOTENCY_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_DOCUMENT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EVIDENCE_INVALID",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RULE_VIOLATION",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_INVALID_OUTPUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_TIMEOUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_REFUSED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAGE_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_SNAPSHOT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "FIELD_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PERMISSION_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_PAGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCAN_LIMIT_EXCEEDED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SNAPSHOT_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_NOT_AVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STORAGE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "TASK_INTERRUPTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_LOCKED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "USER_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "VALUE_NOT_PERSISTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SITE_VALIDATION_FAILED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONTROL_UNSUPPORTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "LOCATOR_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_INTERRUPTED",
+                    "type": "string"
+                  }
+                ]
+              },
+              "message": {
+                "maxLength": 200,
+                "type": "string"
+              },
+              "retryable": {
+                "type": "boolean"
+              },
+              "details": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "required": ["code", "message", "retryable", "details"]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  },
+  "poll": "/v1/career/jd/jobs/:id",
+  "delete": "/v1/career/jd/jobs/:id",
+  "failure": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string"
+      },
+      "data": {
+        "type": "null"
+      },
+      "error": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "const": "INVALID_REQUEST",
+                "type": "string"
+              },
+              {
+                "const": "UNAUTHORIZED",
+                "type": "string"
+              },
+              {
+                "const": "SCOPE_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "CONSENT_REQUIRED",
+                "type": "string"
+              },
+              {
+                "const": "REFERENCE_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "SERVICE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "INTERNAL_ERROR",
+                "type": "string"
+              },
+              {
+                "const": "PAYLOAD_TOO_LARGE",
+                "type": "string"
+              },
+              {
+                "const": "RATE_LIMITED",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "REVISION_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "STALE_PLAN",
+                "type": "string"
+              },
+              {
+                "const": "IDEMPOTENCY_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_DOCUMENT",
+                "type": "string"
+              },
+              {
+                "const": "EVIDENCE_INVALID",
+                "type": "string"
+              },
+              {
+                "const": "RULE_VIOLATION",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_INVALID_OUTPUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_TIMEOUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_REFUSED",
+                "type": "string"
+              },
+              {
+                "const": "PAGE_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "STALE_SNAPSHOT",
+                "type": "string"
+              },
+              {
+                "const": "FIELD_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "PERMISSION_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_PAGE",
+                "type": "string"
+              },
+              {
+                "const": "SCAN_LIMIT_EXCEEDED",
+                "type": "string"
+              },
+              {
+                "const": "SNAPSHOT_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_NOT_AVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "STORAGE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "TASK_INTERRUPTED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_LOCKED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "USER_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "VALUE_NOT_PERSISTED",
+                "type": "string"
+              },
+              {
+                "const": "SITE_VALIDATION_FAILED",
+                "type": "string"
+              },
+              {
+                "const": "CONTROL_UNSUPPORTED",
+                "type": "string"
+              },
+              {
+                "const": "LOCATOR_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_INTERRUPTED",
+                "type": "string"
+              }
+            ]
+          },
+          "message": {
+            "maxLength": 200,
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "details": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "required": ["code", "message", "retryable", "details"]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  }
+}

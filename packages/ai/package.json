@@ -1,0 +1,11 @@
+{
+  "name": "@formpilot/ai",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./src/index.ts",
+  "dependencies": {
+    "@formpilot/contracts": "workspace:*",
+    "@formpilot/domain": "workspace:*"
+  }
+}

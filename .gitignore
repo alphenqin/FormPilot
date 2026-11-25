@@ -1,0 +1,26 @@
+# Dependencies and local package cache
+node_modules/
+.pnpm-store/
+
+# Build output
+build/
+dist/
+*.tsbuildinfo
+
+# Local configuration and credentials
+.env*
+!.env.example
+/.aws/
+
+# Test output
+coverage/
+test-results/
+playwright-report/
+blob-report/
+
+# Runtime data and logs
+.runtime/
+*.log
+
+# OS metadata
+.DS_Store

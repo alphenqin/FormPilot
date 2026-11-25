@@ -1,0 +1,53 @@
+{
+  "name": "formpilot",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@10.26.2",
+  "engines": {
+    "node": ">=24.11.1 <25",
+    "pnpm": ">=10 <11"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @formpilot/api --filter @formpilot/web dev",
+    "build": "pnpm --filter @formpilot/api build && pnpm --filter @formpilot/web build && pnpm --filter @formpilot/extension build && node scripts/verify-artifacts.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "test": "vitest run packages",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "playwright test",
+    "check": "pnpm schema:check && pnpm typecheck && pnpm lint && pnpm test && pnpm test:integration && pnpm build",
+    "smoke:model": "tsx --env-file=.env scripts/smoke-provider.ts",
+    "schema:generate": "tsx scripts/export-api-schemas.ts",
+    "schema:check": "tsx scripts/export-api-schemas.ts --check",
+    "test:m4": "playwright test tests/e2e/execution-component.spec.ts tests/e2e/execution-extension.spec.ts tests/e2e/m4-standard.spec.ts && node scripts/evaluate-m4.mjs",
+    "evaluate:m4": "node scripts/evaluate-m4.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.0",
+    "eslint": "9.39.0",
+    "typescript-eslint": "8.48.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3",
+    "@types/node": "24.10.1",
+    "@types/chrome": "0.1.32",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "@playwright/test": "1.56.1",
+    "vitest": "3.2.4",
+    "tsx": "4.20.6",
+    "esbuild": "0.25.12",
+    "vite": "7.2.2",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "@vitejs/plugin-react": "5.1.1",
+    "@formpilot/contracts": "workspace:*",
+    "@sinclair/typebox": "0.34.41",
+    "@formpilot/domain": "workspace:*",
+    "@formpilot/local-store": "workspace:*",
+    "@formpilot/ai": "workspace:*",
+    "fake-indexeddb": "6.2.4",
+    "@formpilot/browser-engine": "workspace:*"
+  }
+}

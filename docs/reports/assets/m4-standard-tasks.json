@@ -1,0 +1,3812 @@
+[
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选01",
+      "email": "synthetic01@example.test",
+      "phone": "13800000001",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "actual_values": {
+      "name": "合成候选01",
+      "email": "synthetic01@example.test",
+      "phone": "13800000001",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-01",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2572,
+    "field_timings": [
+      {
+        "field_id": "befcbbce-8465-4712-a412-9b45575da85b",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "8c3a00ab-7888-483e-a044-6588e988ef01",
+        "duration_ms": 508.1000000089407
+      },
+      {
+        "field_id": "279e79db-26da-48bb-858e-74d7fd6ae821",
+        "duration_ms": 506.5
+      },
+      {
+        "field_id": "644ef660-319e-4e86-a1ba-3a030cbd3eb5",
+        "duration_ms": 509
+      },
+      {
+        "field_id": "d8bcbe6d-cdef-4cac-9ae8-ffac83a98a09",
+        "duration_ms": 507.79999999701977
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "504e5658-70e5-43c0-b738-6debbd6dd4ba"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "504e5658-70e5-43c0-b738-6debbd6dd4ba"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "504e5658-70e5-43c0-b738-6debbd6dd4ba"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "504e5658-70e5-43c0-b738-6debbd6dd4ba"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "c229e846-4bdc-41ad-b8fa-be71276ba0dd"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选01",
+      "email": "synthetic01@example.test",
+      "school": "虚构大学01",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "actual_values": {
+      "name": "合成候选01",
+      "email": "synthetic01@example.test",
+      "school": "虚构大学01",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-01",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3599,
+    "field_timings": [
+      {
+        "field_id": "f73a1c88-e8a9-4ca4-ae2e-cf5838d68e64",
+        "duration_ms": 509.29999999701977
+      },
+      {
+        "field_id": "b6aaac9f-af68-493b-8a70-8dab4e5472c8",
+        "duration_ms": 508.79999999701977
+      },
+      {
+        "field_id": "0e1fcd53-d351-45df-92f6-c1322e39cca2",
+        "duration_ms": 509.20000000298023
+      },
+      {
+        "field_id": "257a3b59-8a4c-4135-84a9-5ee9b638fcee",
+        "duration_ms": 507.29999999701977
+      },
+      {
+        "field_id": "9b3b42bd-229a-4919-b244-7e9106df5b63",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "7665ca88-f0af-404f-9594-8b2b06e325ab",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "f722b584-91d3-4f61-a97c-9fa6155c1f81",
+        "duration_ms": 507.20000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "c763d4b0-472d-446b-bacd-93236e8afac1"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "c763d4b0-472d-446b-bacd-93236e8afac1"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "75af45f9-4f59-4b3c-a271-2108dac91bb1"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "75af45f9-4f59-4b3c-a271-2108dac91bb1"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "75af45f9-4f59-4b3c-a271-2108dac91bb1"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "75af45f9-4f59-4b3c-a271-2108dac91bb1"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "75af45f9-4f59-4b3c-a271-2108dac91bb1"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "75af45f9-4f59-4b3c-a271-2108dac91bb1"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选01",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲01",
+      "position_a": "虚构研发岗位甲01",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙01",
+      "position_b": "虚构研发岗位乙01",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选01",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲01",
+      "position_a": "虚构研发岗位甲01",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙01",
+      "position_b": "虚构研发岗位乙01",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-01",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5129,
+    "field_timings": [
+      {
+        "field_id": "dcbd8847-306c-4c9c-8d3b-930e9a15a714",
+        "duration_ms": 510.59999999403954
+      },
+      {
+        "field_id": "2b36f3e7-0e99-4a0a-ae00-c1c39a2fb247",
+        "duration_ms": 508.59999999403954
+      },
+      {
+        "field_id": "9306ce51-de10-4bbc-a668-cc9a6e77f70e",
+        "duration_ms": 508.59999999403954
+      },
+      {
+        "field_id": "37b3d0b7-d709-4b28-878e-c58deb88fad3",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "aee3b53e-9644-4e2a-b25e-daed7013e308",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "32989a21-faba-474d-8fdd-95d87301389b",
+        "duration_ms": 508.70000000298023
+      },
+      {
+        "field_id": "351e41f2-348c-43e4-b90b-6717200c517f",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "b8f3a126-b75d-49d9-a11b-c80c89aaa227",
+        "duration_ms": 507.79999999701977
+      },
+      {
+        "field_id": "b4791285-e174-4b23-bb97-8becd756ba98",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "603a48ac-542a-41fa-8157-ac7f1d042818",
+        "duration_ms": 507.70000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "300d47b7-50e9-4648-81a0-c98700ced82f"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "ca3befb7-c964-43a5-b80f-c377ca5fb39b"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "477699ce-025e-4c1a-b3ea-ceb9e55b7428"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "477699ce-025e-4c1a-b3ea-ceb9e55b7428"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "477699ce-025e-4c1a-b3ea-ceb9e55b7428"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "477699ce-025e-4c1a-b3ea-ceb9e55b7428"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "04b1e8b8-d4bc-4647-9b63-6b7b81b83425"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "04b1e8b8-d4bc-4647-9b63-6b7b81b83425"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "04b1e8b8-d4bc-4647-9b63-6b7b81b83425"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "04b1e8b8-d4bc-4647-9b63-6b7b81b83425"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选02",
+      "email": "synthetic02@example.test",
+      "phone": "13800000002",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "actual_values": {
+      "name": "合成候选02",
+      "email": "synthetic02@example.test",
+      "phone": "13800000002",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-02",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2575,
+    "field_timings": [
+      {
+        "field_id": "d113be71-f3d6-4c7d-befc-6cb202c18e63",
+        "duration_ms": 509.29999999701977
+      },
+      {
+        "field_id": "bcc45747-b13c-4fcc-acca-5cdb99f2ef1c",
+        "duration_ms": 510.1000000089407
+      },
+      {
+        "field_id": "21ea7a77-3a17-44b3-a5b0-22fd4af8d87c",
+        "duration_ms": 510
+      },
+      {
+        "field_id": "590a61dd-c198-4ba8-b95f-0cdb1c3c77af",
+        "duration_ms": 507.79999999701977
+      },
+      {
+        "field_id": "db0f2694-4e71-4b98-94ed-894c3df23c8f",
+        "duration_ms": 506.70000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "b02d07ad-495f-478a-9804-7a8cf66e08b4"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "b02d07ad-495f-478a-9804-7a8cf66e08b4"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "b02d07ad-495f-478a-9804-7a8cf66e08b4"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "b02d07ad-495f-478a-9804-7a8cf66e08b4"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "0701579a-fb52-412b-ac2f-8ff51627d6e3"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选02",
+      "email": "synthetic02@example.test",
+      "school": "虚构大学02",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2020-09",
+      "edu_end": "2024-06"
+    },
+    "actual_values": {
+      "name": "合成候选02",
+      "email": "synthetic02@example.test",
+      "school": "虚构大学02",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2020-09",
+      "edu_end": "2024-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-02",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3588,
+    "field_timings": [
+      {
+        "field_id": "c8ffb858-67e9-455c-a1f9-283a1e9c8523",
+        "duration_ms": 508.1000000089407
+      },
+      {
+        "field_id": "d0a012aa-51d5-4946-a477-8c04580de0b9",
+        "duration_ms": 508.19999998807907
+      },
+      {
+        "field_id": "7a5af728-5a54-4437-9929-1273bc673f29",
+        "duration_ms": 507.79999999701977
+      },
+      {
+        "field_id": "c68dbe71-0a95-41cd-a70b-44ec0724c5d2",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "701b9ed8-8dde-4ae6-aa62-ef8ce3825782",
+        "duration_ms": 506.6000000089407
+      },
+      {
+        "field_id": "af255891-ba12-47ff-8760-ff00d26349c4",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "6f9bb1a1-073c-42a7-ad11-b73a717091eb",
+        "duration_ms": 506.20000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "9a622815-337c-4045-958c-5a52f6e280d1"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "9a622815-337c-4045-958c-5a52f6e280d1"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "3f580d14-4817-403c-a5c4-b5f246564e66"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "3f580d14-4817-403c-a5c4-b5f246564e66"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "3f580d14-4817-403c-a5c4-b5f246564e66"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "3f580d14-4817-403c-a5c4-b5f246564e66"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "3f580d14-4817-403c-a5c4-b5f246564e66"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "3f580d14-4817-403c-a5c4-b5f246564e66"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选02",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲02",
+      "position_a": "虚构研发岗位甲02",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙02",
+      "position_b": "虚构研发岗位乙02",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选02",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲02",
+      "position_a": "虚构研发岗位甲02",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙02",
+      "position_b": "虚构研发岗位乙02",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-02",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5125,
+    "field_timings": [
+      {
+        "field_id": "183bf909-31f1-474b-97d0-d390c742a6dd",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "6cb7cefa-56d5-46fc-b41d-115b95282a40",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "395186b2-dda6-4314-9605-99e26d45d1fc",
+        "duration_ms": 506.69999998807907
+      },
+      {
+        "field_id": "539446db-8167-4c73-bbe4-b91cb8372640",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "47f873d0-1cc2-44fb-9bbd-d54cfac255c5",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "f9fb495b-8249-4b6b-a312-6ca92538a293",
+        "duration_ms": 507.29999999701977
+      },
+      {
+        "field_id": "4ffce096-902e-4afa-8c86-8108695f099e",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "556679d1-2f3a-422d-889e-03da2465ac4a",
+        "duration_ms": 507.79999999701977
+      },
+      {
+        "field_id": "16f28df7-b398-4a07-8c99-c7ef4a382848",
+        "duration_ms": 506.8999999910593
+      },
+      {
+        "field_id": "066270e6-ebe6-4924-9964-efa3ce838966",
+        "duration_ms": 507
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "405a5980-47a3-4e5e-902a-7a52048d043e"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "543e8e35-3a3c-4cf1-84bf-9be5eae73605"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "55cf4836-dbb7-4b9a-8ce0-c44666902c4d"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "55cf4836-dbb7-4b9a-8ce0-c44666902c4d"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "55cf4836-dbb7-4b9a-8ce0-c44666902c4d"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "55cf4836-dbb7-4b9a-8ce0-c44666902c4d"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "c1457fb5-6d89-4e3e-ac14-d8522ebc39fc"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "c1457fb5-6d89-4e3e-ac14-d8522ebc39fc"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "c1457fb5-6d89-4e3e-ac14-d8522ebc39fc"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "c1457fb5-6d89-4e3e-ac14-d8522ebc39fc"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选03",
+      "email": "synthetic03@example.test",
+      "phone": "13800000003",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "actual_values": {
+      "name": "合成候选03",
+      "email": "synthetic03@example.test",
+      "phone": "13800000003",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-03",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2565,
+    "field_timings": [
+      {
+        "field_id": "fa2f56ec-00bf-4763-af89-35df1465f3b1",
+        "duration_ms": 509.70000000298023
+      },
+      {
+        "field_id": "8741aba4-644e-40db-9c1d-496888049b2a",
+        "duration_ms": 507.1000000089407
+      },
+      {
+        "field_id": "ab8cff94-d8c9-48c2-9917-f947095b433f",
+        "duration_ms": 506.90000000596046
+      },
+      {
+        "field_id": "ff9c1850-f1f4-489e-87bb-53bbb4214705",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "6d9ab51b-9c4a-4675-9fa1-f2b5baa6bd2a",
+        "duration_ms": 506.6000000089407
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "a613a5dd-82bd-4f72-8af1-8645e61d815e"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "a613a5dd-82bd-4f72-8af1-8645e61d815e"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "a613a5dd-82bd-4f72-8af1-8645e61d815e"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "a613a5dd-82bd-4f72-8af1-8645e61d815e"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "0481e446-ea98-4f4d-a948-630427eac784"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选03",
+      "email": "synthetic03@example.test",
+      "school": "虚构大学03",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2021-09",
+      "edu_end": "2025-06"
+    },
+    "actual_values": {
+      "name": "合成候选03",
+      "email": "synthetic03@example.test",
+      "school": "虚构大学03",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2021-09",
+      "edu_end": "2025-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-03",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3595,
+    "field_timings": [
+      {
+        "field_id": "cb9a6f66-daad-4a35-a87c-b041b5ab7357",
+        "duration_ms": 509.29999999701977
+      },
+      {
+        "field_id": "133e72f1-f673-4154-9656-0cf128a8fb77",
+        "duration_ms": 509.20000000298023
+      },
+      {
+        "field_id": "ed1c3bc5-346b-4838-93af-6ac0fe5b1fef",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "ba7598ac-f623-4c7c-b98a-09e1061e5c00",
+        "duration_ms": 507.69999998807907
+      },
+      {
+        "field_id": "da24f2e3-6e64-4cf8-b0f7-0bf7f1dd99e8",
+        "duration_ms": 508.1000000089407
+      },
+      {
+        "field_id": "ae543f76-f340-4edb-81b4-bddb15ff0354",
+        "duration_ms": 509.09999999403954
+      },
+      {
+        "field_id": "a2a84ae7-2ee6-4f10-b5e4-e437ebd18e9e",
+        "duration_ms": 507.8999999910593
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "4a336af7-1221-4572-80a6-119e47fd5a08"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "4a336af7-1221-4572-80a6-119e47fd5a08"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "344d51f9-b1eb-4413-9e37-13e6df262f0c"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "344d51f9-b1eb-4413-9e37-13e6df262f0c"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "344d51f9-b1eb-4413-9e37-13e6df262f0c"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "344d51f9-b1eb-4413-9e37-13e6df262f0c"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "344d51f9-b1eb-4413-9e37-13e6df262f0c"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "344d51f9-b1eb-4413-9e37-13e6df262f0c"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选03",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲03",
+      "position_a": "虚构研发岗位甲03",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙03",
+      "position_b": "虚构研发岗位乙03",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选03",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲03",
+      "position_a": "虚构研发岗位甲03",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙03",
+      "position_b": "虚构研发岗位乙03",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-03",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5124,
+    "field_timings": [
+      {
+        "field_id": "88fb3876-7994-49dc-8178-fc3c284dae9e",
+        "duration_ms": 508.79999999701977
+      },
+      {
+        "field_id": "bc8134c2-ef6f-4e52-a69d-58837c49ebe7",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "16667e0f-9592-4708-843b-8fce824ce3d9",
+        "duration_ms": 508.30000001192093
+      },
+      {
+        "field_id": "333b60bb-72d5-4d13-8f1b-e961f5585059",
+        "duration_ms": 507.30000001192093
+      },
+      {
+        "field_id": "cf66834b-f86f-4d85-b62e-9c03dafa20b4",
+        "duration_ms": 507.90000000596046
+      },
+      {
+        "field_id": "25ae0c3a-b777-4ea2-9764-f5e77cb3370d",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "eb166720-0077-4343-84d5-83aec8652bdf",
+        "duration_ms": 508.5
+      },
+      {
+        "field_id": "f3cf6fe2-d43d-43a0-9cf8-5039b63db232",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "a19920c2-937c-464e-87d9-57f5aac1edb5",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "04262ca5-9cff-4675-b21d-c7792cd7159a",
+        "duration_ms": 507.70000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "93fbf420-d46d-4b64-aa77-30ad5df7887d"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "a9a96315-1cb2-4e96-92f7-aabe4b4257b7"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "144cd343-abec-4b4e-91d3-d5633b8fedb3"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "144cd343-abec-4b4e-91d3-d5633b8fedb3"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "144cd343-abec-4b4e-91d3-d5633b8fedb3"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "144cd343-abec-4b4e-91d3-d5633b8fedb3"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "7e6c1952-89f4-4500-8567-6484cf263ffb"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "7e6c1952-89f4-4500-8567-6484cf263ffb"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "7e6c1952-89f4-4500-8567-6484cf263ffb"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "7e6c1952-89f4-4500-8567-6484cf263ffb"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选04",
+      "email": "synthetic04@example.test",
+      "phone": "13800000004",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "actual_values": {
+      "name": "合成候选04",
+      "email": "synthetic04@example.test",
+      "phone": "13800000004",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-04",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2569,
+    "field_timings": [
+      {
+        "field_id": "f13edbee-6ac3-4618-b41c-0e5ed22d37b3",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "128ca337-48b6-496b-97cd-6ad57a30532d",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "6c8107a1-1d07-4e10-9cf0-f9ff27c3584f",
+        "duration_ms": 508.59999999403954
+      },
+      {
+        "field_id": "5a3ae1b2-279e-4683-94a2-9c3794f0dcbd",
+        "duration_ms": 507.6000000089407
+      },
+      {
+        "field_id": "abd5a653-e65d-4497-a34b-4965216b18d9",
+        "duration_ms": 506.40000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "c291bce8-67df-47c1-bc3d-ea0dec5390fa"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "c291bce8-67df-47c1-bc3d-ea0dec5390fa"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "c291bce8-67df-47c1-bc3d-ea0dec5390fa"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "c291bce8-67df-47c1-bc3d-ea0dec5390fa"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "27327e25-5729-4f75-8b73-89749af9fa79"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选04",
+      "email": "synthetic04@example.test",
+      "school": "虚构大学04",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "actual_values": {
+      "name": "合成候选04",
+      "email": "synthetic04@example.test",
+      "school": "虚构大学04",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-04",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3594,
+    "field_timings": [
+      {
+        "field_id": "5c92e991-53fa-45fd-87ff-7469c5d97968",
+        "duration_ms": 508.8999999910593
+      },
+      {
+        "field_id": "33444544-8ad9-4548-b055-acaa07b1db5c",
+        "duration_ms": 508.70000000298023
+      },
+      {
+        "field_id": "b264eb97-c296-47ee-b778-4506b58124aa",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "8d0b2d21-e280-425a-bcbd-69117362bbc2",
+        "duration_ms": 507.29999999701977
+      },
+      {
+        "field_id": "4559849f-7297-4eba-bb04-18471ddf92e3",
+        "duration_ms": 507.80000001192093
+      },
+      {
+        "field_id": "00a8357a-5799-4266-a95c-46e2c9bce4bd",
+        "duration_ms": 507.3999999910593
+      },
+      {
+        "field_id": "342a86ff-6736-4f00-926e-fe9e54b4a80a",
+        "duration_ms": 507.40000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "2237fd4b-1db0-4758-a952-6759877ae904"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "2237fd4b-1db0-4758-a952-6759877ae904"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "cf9846f5-014b-4eec-8802-316a63ec8f70"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "cf9846f5-014b-4eec-8802-316a63ec8f70"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "cf9846f5-014b-4eec-8802-316a63ec8f70"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "cf9846f5-014b-4eec-8802-316a63ec8f70"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "cf9846f5-014b-4eec-8802-316a63ec8f70"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "cf9846f5-014b-4eec-8802-316a63ec8f70"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选04",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲04",
+      "position_a": "虚构研发岗位甲04",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙04",
+      "position_b": "虚构研发岗位乙04",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选04",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲04",
+      "position_a": "虚构研发岗位甲04",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙04",
+      "position_b": "虚构研发岗位乙04",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-04",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5127,
+    "field_timings": [
+      {
+        "field_id": "ac00f2a8-675b-4061-a3c6-9dfb8adc53d5",
+        "duration_ms": 509.59999999403954
+      },
+      {
+        "field_id": "0a519165-476d-4d3d-8f15-2abb71df6999",
+        "duration_ms": 507.6000000089407
+      },
+      {
+        "field_id": "e0212f5d-7dbc-47dd-a49a-06a89522d930",
+        "duration_ms": 507.70000000298023
+      },
+      {
+        "field_id": "9ff8b33d-d013-4aa7-91d6-6cb4440f67ed",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "4452f58a-2bcb-49ca-8a19-5db1293fe1ba",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "db1ba0a2-3a30-4bc8-8c11-ecbe1dd580a4",
+        "duration_ms": 507.70000000298023
+      },
+      {
+        "field_id": "2e1eda7d-f9ca-431c-b8ec-7a5a62dcf58e",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "03a37131-cd8a-4b12-8c77-7f0dd3b2be84",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "427182e6-a843-4072-8999-91118d384106",
+        "duration_ms": 508.5
+      },
+      {
+        "field_id": "efb21584-acd6-4a1d-95f1-93df96faa098",
+        "duration_ms": 507.29999999701977
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "597c1dd7-39a6-4601-93a8-f83cffc93d7c"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "822eecfe-bee2-4ec1-b3ab-2623b45ce597"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "c1f25a5d-112e-4a26-ade6-aa60e62674c1"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "c1f25a5d-112e-4a26-ade6-aa60e62674c1"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "c1f25a5d-112e-4a26-ade6-aa60e62674c1"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "c1f25a5d-112e-4a26-ade6-aa60e62674c1"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "5d4aa85f-3c0b-4049-9a2f-c89a4c239f83"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "5d4aa85f-3c0b-4049-9a2f-c89a4c239f83"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "5d4aa85f-3c0b-4049-9a2f-c89a4c239f83"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "5d4aa85f-3c0b-4049-9a2f-c89a4c239f83"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选05",
+      "email": "synthetic05@example.test",
+      "phone": "13800000005",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "actual_values": {
+      "name": "合成候选05",
+      "email": "synthetic05@example.test",
+      "phone": "13800000005",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-05",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2565,
+    "field_timings": [
+      {
+        "field_id": "ee911b4a-bbee-470b-b049-4cae8db9dd47",
+        "duration_ms": 509.3999999910593
+      },
+      {
+        "field_id": "0b48bcc1-b818-442c-9498-58d6eabc76db",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "6a1a62af-a5b2-4309-8933-90945bc436ab",
+        "duration_ms": 506.5
+      },
+      {
+        "field_id": "11e87469-48d2-4ebe-b62f-321163fea53a",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "dbf1dd3a-8d2e-4e55-84b8-e25b04c89582",
+        "duration_ms": 506.59999999403954
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "d12cb207-b114-4a9e-8d8f-8d67909daa59"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "d12cb207-b114-4a9e-8d8f-8d67909daa59"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "d12cb207-b114-4a9e-8d8f-8d67909daa59"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "d12cb207-b114-4a9e-8d8f-8d67909daa59"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "f112a2d0-12ac-494d-bb47-082c9ea8bada"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选05",
+      "email": "synthetic05@example.test",
+      "school": "虚构大学05",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2020-09",
+      "edu_end": "2024-06"
+    },
+    "actual_values": {
+      "name": "合成候选05",
+      "email": "synthetic05@example.test",
+      "school": "虚构大学05",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2020-09",
+      "edu_end": "2024-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-05",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3592,
+    "field_timings": [
+      {
+        "field_id": "70d0801a-72f9-49ce-aeda-1da03657b368",
+        "duration_ms": 509.20000000298023
+      },
+      {
+        "field_id": "0c594600-9776-4ab2-9ebd-819464d01b75",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "8440e2de-8731-4d16-a57d-5005e330315d",
+        "duration_ms": 507.79999999701977
+      },
+      {
+        "field_id": "9dfb07ac-939f-44cb-a4f6-abdf9e6bea82",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "76b6daa9-0c61-4722-b8e5-1ada2c9dc724",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "5b89cb49-7c2b-44f0-8d7b-e8fdd8adc9c6",
+        "duration_ms": 508.20000000298023
+      },
+      {
+        "field_id": "126b5c0b-d0c6-4d9d-aec1-1c08b4edd9ed",
+        "duration_ms": 506.40000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "5d6c6ef9-9901-49bf-ad3b-67ea7d147ec4"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "5d6c6ef9-9901-49bf-ad3b-67ea7d147ec4"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "06625fca-e99e-4072-ac56-7455b761fed2"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "06625fca-e99e-4072-ac56-7455b761fed2"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "06625fca-e99e-4072-ac56-7455b761fed2"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "06625fca-e99e-4072-ac56-7455b761fed2"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "06625fca-e99e-4072-ac56-7455b761fed2"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "06625fca-e99e-4072-ac56-7455b761fed2"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选05",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲05",
+      "position_a": "虚构研发岗位甲05",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙05",
+      "position_b": "虚构研发岗位乙05",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选05",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲05",
+      "position_a": "虚构研发岗位甲05",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙05",
+      "position_b": "虚构研发岗位乙05",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-05",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5131,
+    "field_timings": [
+      {
+        "field_id": "0d129eac-c801-4d76-b3d6-ff4ad2520ccf",
+        "duration_ms": 511.20000000298023
+      },
+      {
+        "field_id": "a8446e6f-7119-456f-b1bc-c3f25cd2ec7e",
+        "duration_ms": 509.3999999910593
+      },
+      {
+        "field_id": "3df2df9f-b7d9-469f-9390-4632f8cd60a9",
+        "duration_ms": 507.59999999403954
+      },
+      {
+        "field_id": "3708cf63-c6f6-4656-90b4-bb2d4a0c1bd7",
+        "duration_ms": 509
+      },
+      {
+        "field_id": "e02eae95-cc31-44eb-ac8e-7543e08f0280",
+        "duration_ms": 506.8999999910593
+      },
+      {
+        "field_id": "83ee05d4-297a-49ab-8e40-54a760b2155b",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "d43d83e7-9b1e-4817-b9ae-07a967ded5ab",
+        "duration_ms": 507.79999999701977
+      },
+      {
+        "field_id": "dc6102d8-d58d-48c2-8019-53b336e46ce2",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "3b0cf59f-4003-41a2-abf5-7aaf1f56c9d4",
+        "duration_ms": 507.80000001192093
+      },
+      {
+        "field_id": "ac01973e-db71-41d2-a2e4-d0b8831dd2a9",
+        "duration_ms": 508.1000000089407
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "924e8910-419e-4004-b0e2-216ab0b2e3bb"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "56f12029-17fc-428f-b4d6-6134c380872b"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "2086057f-b0d3-4b56-a09b-c64fbbbc03a9"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "2086057f-b0d3-4b56-a09b-c64fbbbc03a9"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "2086057f-b0d3-4b56-a09b-c64fbbbc03a9"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "2086057f-b0d3-4b56-a09b-c64fbbbc03a9"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "9a723370-668a-4ff6-abc9-0124c91e5692"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "9a723370-668a-4ff6-abc9-0124c91e5692"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "9a723370-668a-4ff6-abc9-0124c91e5692"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "9a723370-668a-4ff6-abc9-0124c91e5692"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选06",
+      "email": "synthetic06@example.test",
+      "phone": "13800000006",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "actual_values": {
+      "name": "合成候选06",
+      "email": "synthetic06@example.test",
+      "phone": "13800000006",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-06",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2616,
+    "field_timings": [
+      {
+        "field_id": "ab22aa2c-0fb2-4edd-b78a-fc538b3278dc",
+        "duration_ms": 516.3999999910593
+      },
+      {
+        "field_id": "5a0480f6-cea1-4150-850b-42cb1b15268f",
+        "duration_ms": 514.3999999910593
+      },
+      {
+        "field_id": "d8fcc14f-50ce-427c-a2cc-7efb7e1cd4cc",
+        "duration_ms": 518.7000000029802
+      },
+      {
+        "field_id": "42458904-f3d4-4454-bbb4-7652e31d1b7d",
+        "duration_ms": 514.2999999970198
+      },
+      {
+        "field_id": "dd1e91d7-0faf-4b8b-9e38-98ab649dd083",
+        "duration_ms": 512.5999999940395
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "336a2b5f-715d-4bc6-9205-c3d8793e35af"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "336a2b5f-715d-4bc6-9205-c3d8793e35af"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "336a2b5f-715d-4bc6-9205-c3d8793e35af"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "336a2b5f-715d-4bc6-9205-c3d8793e35af"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "09081d65-ca79-49c9-b0b4-83ce2f66ca64"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选06",
+      "email": "synthetic06@example.test",
+      "school": "虚构大学06",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2021-09",
+      "edu_end": "2025-06"
+    },
+    "actual_values": {
+      "name": "合成候选06",
+      "email": "synthetic06@example.test",
+      "school": "虚构大学06",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2021-09",
+      "edu_end": "2025-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-06",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3598,
+    "field_timings": [
+      {
+        "field_id": "b2a678f7-32de-49f1-a770-29e1f61d5af3",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "a6f0f2dd-5a43-49b9-87ee-83e82fb34593",
+        "duration_ms": 509.70000000298023
+      },
+      {
+        "field_id": "d86d7edc-a539-46ba-bfad-006a130c217c",
+        "duration_ms": 509.20000000298023
+      },
+      {
+        "field_id": "42a77e71-a4ce-4c20-a998-845168c50da7",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "e9d693cc-b2f5-44dc-b87d-1ce68185c52f",
+        "duration_ms": 507.6000000089407
+      },
+      {
+        "field_id": "78b3391a-2f38-4aaf-a594-508c25cc1a09",
+        "duration_ms": 509.80000001192093
+      },
+      {
+        "field_id": "2c91b10b-5c42-4482-b051-3b9996991615",
+        "duration_ms": 509.90000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "17d207b5-b825-4f0d-bbba-bfea40fd1a55"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "17d207b5-b825-4f0d-bbba-bfea40fd1a55"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "732aeadd-7d17-49e4-a962-be381965ba08"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "732aeadd-7d17-49e4-a962-be381965ba08"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "732aeadd-7d17-49e4-a962-be381965ba08"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "732aeadd-7d17-49e4-a962-be381965ba08"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "732aeadd-7d17-49e4-a962-be381965ba08"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "732aeadd-7d17-49e4-a962-be381965ba08"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选06",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲06",
+      "position_a": "虚构研发岗位甲06",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙06",
+      "position_b": "虚构研发岗位乙06",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选06",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲06",
+      "position_a": "虚构研发岗位甲06",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙06",
+      "position_b": "虚构研发岗位乙06",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-06",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5129,
+    "field_timings": [
+      {
+        "field_id": "6f2beed4-fc9b-483a-b7bf-f4f177fed738",
+        "duration_ms": 509
+      },
+      {
+        "field_id": "35707935-04eb-42b2-81b7-b20c19bfb93a",
+        "duration_ms": 507.70000000298023
+      },
+      {
+        "field_id": "1878f016-6afb-4087-af9a-ff86a9b25c8c",
+        "duration_ms": 506.90000000596046
+      },
+      {
+        "field_id": "e03fd7cf-5276-4135-ad6f-e7fdb6a27a43",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "5c85fc31-11c1-4acf-8673-3f4e0e4ea655",
+        "duration_ms": 508.5
+      },
+      {
+        "field_id": "429e402f-dc84-43ed-beda-ee5e24b2b703",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "3d1c8860-f836-4566-ab8a-c0a6888d37bd",
+        "duration_ms": 507.70000000298023
+      },
+      {
+        "field_id": "af362f1d-c269-43f7-9daa-c358fe5942c9",
+        "duration_ms": 506.90000000596046
+      },
+      {
+        "field_id": "ff62b09c-27b8-4472-a5f8-db8235f74fb0",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "33382864-5db3-43ab-bb81-8c932ff4a58d",
+        "duration_ms": 507.59999999403954
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "4c982272-9d6a-493b-9d54-54281e3591a0"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "9af5f986-0f47-4b10-b3d1-0ce06d38e522"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "165fb609-79ef-4992-980d-40095b3491e7"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "165fb609-79ef-4992-980d-40095b3491e7"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "165fb609-79ef-4992-980d-40095b3491e7"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "165fb609-79ef-4992-980d-40095b3491e7"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "796108de-ee0a-403c-a3f6-cbc5115f21aa"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "796108de-ee0a-403c-a3f6-cbc5115f21aa"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "796108de-ee0a-403c-a3f6-cbc5115f21aa"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "796108de-ee0a-403c-a3f6-cbc5115f21aa"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选07",
+      "email": "synthetic07@example.test",
+      "phone": "13800000007",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "actual_values": {
+      "name": "合成候选07",
+      "email": "synthetic07@example.test",
+      "phone": "13800000007",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-07",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2564,
+    "field_timings": [
+      {
+        "field_id": "5c47571d-cf00-4788-b130-11bf67dea236",
+        "duration_ms": 508.1000000089407
+      },
+      {
+        "field_id": "f837382e-2583-4c6e-8814-2f69b81be03e",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "4f37110b-a3e6-46aa-b8a4-a7998f058662",
+        "duration_ms": 506.40000000596046
+      },
+      {
+        "field_id": "b5398674-e0d1-4f70-85a0-947609542a00",
+        "duration_ms": 506.29999999701977
+      },
+      {
+        "field_id": "cd644398-dde9-4408-9001-d286292cd1d8",
+        "duration_ms": 506.40000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "78302289-e03f-4c84-902f-d16f5638824b"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "78302289-e03f-4c84-902f-d16f5638824b"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "78302289-e03f-4c84-902f-d16f5638824b"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "78302289-e03f-4c84-902f-d16f5638824b"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "255ee4d1-6e39-4c66-aa80-d83b4db64b80"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选07",
+      "email": "synthetic07@example.test",
+      "school": "虚构大学07",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "actual_values": {
+      "name": "合成候选07",
+      "email": "synthetic07@example.test",
+      "school": "虚构大学07",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-07",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3588,
+    "field_timings": [
+      {
+        "field_id": "98f938cd-355d-4704-acbf-abdc3a475155",
+        "duration_ms": 510.19999998807907
+      },
+      {
+        "field_id": "c7dc8d50-b184-4f9a-ac1b-fd51c96e4b35",
+        "duration_ms": 508.5
+      },
+      {
+        "field_id": "4c9da320-39c9-46c4-a950-e43766132bc1",
+        "duration_ms": 508.1000000089407
+      },
+      {
+        "field_id": "9b1e4f1c-c7a8-4bd5-9261-83cf9ed4d410",
+        "duration_ms": 506.5
+      },
+      {
+        "field_id": "ef8d0cd8-f7b6-459f-8a1b-0f95702d4972",
+        "duration_ms": 506.80000001192093
+      },
+      {
+        "field_id": "9feeb459-bd79-4378-b11d-292ea7484606",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "5677c62a-9b40-4167-839d-dbb1982f560f",
+        "duration_ms": 506.79999999701977
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "e6424859-2d5d-4a33-95f6-a0048b0a111a"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "e6424859-2d5d-4a33-95f6-a0048b0a111a"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "46aacd13-0f44-4735-81bd-d3250063150a"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "46aacd13-0f44-4735-81bd-d3250063150a"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "46aacd13-0f44-4735-81bd-d3250063150a"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "46aacd13-0f44-4735-81bd-d3250063150a"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "46aacd13-0f44-4735-81bd-d3250063150a"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "46aacd13-0f44-4735-81bd-d3250063150a"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选07",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲07",
+      "position_a": "虚构研发岗位甲07",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙07",
+      "position_b": "虚构研发岗位乙07",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选07",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲07",
+      "position_a": "虚构研发岗位甲07",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙07",
+      "position_b": "虚构研发岗位乙07",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-07",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5120,
+    "field_timings": [
+      {
+        "field_id": "43bb013c-1a34-487a-8b10-0bc16b4db8e5",
+        "duration_ms": 508.5
+      },
+      {
+        "field_id": "18aab8cd-1248-4bab-92b1-db91f37e1549",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "d0ba6093-c778-4628-bcd4-71eed1c6236e",
+        "duration_ms": 509.20000000298023
+      },
+      {
+        "field_id": "608c2a40-b056-4f79-abba-03d988f1e7dd",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "aee9415f-730c-41b0-a30d-04531dd4a240",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "ce8d3cdb-1c4a-4619-9818-5fb1282acb1a",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "831ecef8-4268-4143-86d6-cb77542374a3",
+        "duration_ms": 507.3999999910593
+      },
+      {
+        "field_id": "1123af84-3d63-408e-a88c-3233fd4aedad",
+        "duration_ms": 507.3999999910593
+      },
+      {
+        "field_id": "14e5002e-ddbb-48d1-8318-e7fc944b8e34",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "cc5ddc38-c383-4655-a34f-f82a6ae7f52d",
+        "duration_ms": 506.8999999910593
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "12830998-2b65-4958-a624-ee04822720c4"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "c5e21e36-70b7-4914-912f-2d74d2258951"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "687a9393-79d9-427f-a446-0495e29e5f2b"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "687a9393-79d9-427f-a446-0495e29e5f2b"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "687a9393-79d9-427f-a446-0495e29e5f2b"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "687a9393-79d9-427f-a446-0495e29e5f2b"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "5eaa86bb-49fa-4234-a88b-ac10b5dc2371"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "5eaa86bb-49fa-4234-a88b-ac10b5dc2371"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "5eaa86bb-49fa-4234-a88b-ac10b5dc2371"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "5eaa86bb-49fa-4234-a88b-ac10b5dc2371"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选08",
+      "email": "synthetic08@example.test",
+      "phone": "13800000008",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "actual_values": {
+      "name": "合成候选08",
+      "email": "synthetic08@example.test",
+      "phone": "13800000008",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-08",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2564,
+    "field_timings": [
+      {
+        "field_id": "22c0117f-74d1-409f-b65e-905e8a588b52",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "6da2cb01-5b23-47db-928b-dc7cf1d386bf",
+        "duration_ms": 507.09999999403954
+      },
+      {
+        "field_id": "df80a72e-2d2e-4e2d-9723-df663095ea61",
+        "duration_ms": 506.19999998807907
+      },
+      {
+        "field_id": "7f4e2d0b-6c96-4065-8747-6234580cf15e",
+        "duration_ms": 506.6000000089407
+      },
+      {
+        "field_id": "5e7e1abd-0ecd-46fe-bdda-6506b37d3a7a",
+        "duration_ms": 506.29999999701977
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "27a59203-ad79-49d5-bef3-75500e578127"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "27a59203-ad79-49d5-bef3-75500e578127"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "27a59203-ad79-49d5-bef3-75500e578127"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "27a59203-ad79-49d5-bef3-75500e578127"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "941bf915-abf9-4ddc-8a74-eee6887530ec"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选08",
+      "email": "synthetic08@example.test",
+      "school": "虚构大学08",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2020-09",
+      "edu_end": "2024-06"
+    },
+    "actual_values": {
+      "name": "合成候选08",
+      "email": "synthetic08@example.test",
+      "school": "虚构大学08",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2020-09",
+      "edu_end": "2024-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-08",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3588,
+    "field_timings": [
+      {
+        "field_id": "78080408-5db2-4c73-a045-8cb4b89d126f",
+        "duration_ms": 508
+      },
+      {
+        "field_id": "20bd1e35-02ef-49d2-aa30-b009b34b58af",
+        "duration_ms": 508.20000000298023
+      },
+      {
+        "field_id": "da9d5e3b-83c9-4502-b0e0-806c7eead242",
+        "duration_ms": 507.3999999910593
+      },
+      {
+        "field_id": "cf3d562d-c469-49c4-9851-14b398d9e363",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "8e987f5f-bbd3-40ad-9157-8d6a7e65c399",
+        "duration_ms": 506.5
+      },
+      {
+        "field_id": "7729ab1c-ca33-44c2-a4eb-e499c26ccf2c",
+        "duration_ms": 509.69999998807907
+      },
+      {
+        "field_id": "4d1f4353-4a8e-4e98-a004-9ad4fb5e3654",
+        "duration_ms": 506.40000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "9bea8646-0a08-42fe-a4bc-2d5f2cd8fa18"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "9bea8646-0a08-42fe-a4bc-2d5f2cd8fa18"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "dd73fdcb-a7c1-4e6a-ba38-61c60c7a0944"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "dd73fdcb-a7c1-4e6a-ba38-61c60c7a0944"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "dd73fdcb-a7c1-4e6a-ba38-61c60c7a0944"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "dd73fdcb-a7c1-4e6a-ba38-61c60c7a0944"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "dd73fdcb-a7c1-4e6a-ba38-61c60c7a0944"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "dd73fdcb-a7c1-4e6a-ba38-61c60c7a0944"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选08",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲08",
+      "position_a": "虚构研发岗位甲08",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙08",
+      "position_b": "虚构研发岗位乙08",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选08",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲08",
+      "position_a": "虚构研发岗位甲08",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙08",
+      "position_b": "虚构研发岗位乙08",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-08",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5122,
+    "field_timings": [
+      {
+        "field_id": "0fd0e8a5-333c-42cc-8008-22f1af4c948b",
+        "duration_ms": 509.1000000089407
+      },
+      {
+        "field_id": "cb2068d1-42d9-4564-948e-b5d52a814359",
+        "duration_ms": 506.80000001192093
+      },
+      {
+        "field_id": "91463b4c-251e-42f4-8f14-5cd1e46d3b18",
+        "duration_ms": 507.90000000596046
+      },
+      {
+        "field_id": "4892fbd5-2499-4e79-ab0c-8cd1bef8e938",
+        "duration_ms": 506.90000000596046
+      },
+      {
+        "field_id": "f47b9982-f641-4d3a-87e5-dc84f8a2c9c9",
+        "duration_ms": 507.29999999701977
+      },
+      {
+        "field_id": "fa370c89-183f-4cca-8b82-f4136ebe12f3",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "92f34ccf-b76f-43dd-bb51-c9611ffaaa71",
+        "duration_ms": 507.70000000298023
+      },
+      {
+        "field_id": "b9bbc0a3-69ad-427a-8e75-46b90cca230d",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "4860a470-42ee-4d29-b9ce-470a1ee8d3df",
+        "duration_ms": 507.09999999403954
+      },
+      {
+        "field_id": "3f0ca23f-b8a5-4105-aa11-742223b5e0a0",
+        "duration_ms": 506.59999999403954
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "302105d0-4f9f-45cd-b524-c7defc551e63"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "a6d6fd3e-c7ec-4f37-8c3f-f14ab4603e66"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "11409c41-0d65-4920-b4c0-d9d51e1210b2"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "11409c41-0d65-4920-b4c0-d9d51e1210b2"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "11409c41-0d65-4920-b4c0-d9d51e1210b2"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "11409c41-0d65-4920-b4c0-d9d51e1210b2"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "9adc2d29-81d8-4307-8926-57710adc015e"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "9adc2d29-81d8-4307-8926-57710adc015e"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "9adc2d29-81d8-4307-8926-57710adc015e"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "9adc2d29-81d8-4307-8926-57710adc015e"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选09",
+      "email": "synthetic09@example.test",
+      "phone": "13800000009",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "actual_values": {
+      "name": "合成候选09",
+      "email": "synthetic09@example.test",
+      "phone": "13800000009",
+      "current_city": "杭州",
+      "intention_city": "BJ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-09",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2562,
+    "field_timings": [
+      {
+        "field_id": "5feb9c59-e1e5-4f08-8660-c82861fe69ad",
+        "duration_ms": 508.09999999403954
+      },
+      {
+        "field_id": "9955f275-cee2-43db-92e5-71cbe3849ff9",
+        "duration_ms": 506.59999999403954
+      },
+      {
+        "field_id": "0f116537-6485-40df-a2f1-5bc630661b12",
+        "duration_ms": 506.29999999701977
+      },
+      {
+        "field_id": "5b070396-b1ca-47bd-b365-b07e500f7ae4",
+        "duration_ms": 506.29999999701977
+      },
+      {
+        "field_id": "1c12b040-1ee3-4dbc-878c-30e76d6bee03",
+        "duration_ms": 507.20000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "601eaca2-43e8-46a3-9587-04d944794eca"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "601eaca2-43e8-46a3-9587-04d944794eca"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "601eaca2-43e8-46a3-9587-04d944794eca"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "601eaca2-43e8-46a3-9587-04d944794eca"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "ba740ec4-2180-4d16-851e-b2f11b4e7e0c"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选09",
+      "email": "synthetic09@example.test",
+      "school": "虚构大学09",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2021-09",
+      "edu_end": "2025-06"
+    },
+    "actual_values": {
+      "name": "合成候选09",
+      "email": "synthetic09@example.test",
+      "school": "虚构大学09",
+      "major": "软件工程",
+      "degree": "BA",
+      "edu_start": "2021-09",
+      "edu_end": "2025-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-09",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3595,
+    "field_timings": [
+      {
+        "field_id": "2466df81-ef5d-4c2e-b2ea-ce600f7e020b",
+        "duration_ms": 509.5
+      },
+      {
+        "field_id": "e35b3240-4652-4398-a2b4-9c4ea1f42a8f",
+        "duration_ms": 508.79999999701977
+      },
+      {
+        "field_id": "861efa90-a722-42fa-aa09-172721cae0ed",
+        "duration_ms": 508.20000000298023
+      },
+      {
+        "field_id": "19a0ffef-6b12-4dfa-adc7-a10a54b01a85",
+        "duration_ms": 506.59999999403954
+      },
+      {
+        "field_id": "eaabfd1a-b542-496e-a7df-7c2118c00ba6",
+        "duration_ms": 509.09999999403954
+      },
+      {
+        "field_id": "c545dd8c-f99e-4671-a302-0a56072946cc",
+        "duration_ms": 507.40000000596046
+      },
+      {
+        "field_id": "988df4f5-a34e-49ac-b718-1e2d5c693340",
+        "duration_ms": 507.20000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "2dababb7-1c3b-4d70-b244-a5f4cee89147"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "2dababb7-1c3b-4d70-b244-a5f4cee89147"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "3cc6d6c6-fd81-40c5-bb9d-1f79d6c24755"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "3cc6d6c6-fd81-40c5-bb9d-1f79d6c24755"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "3cc6d6c6-fd81-40c5-bb9d-1f79d6c24755"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "3cc6d6c6-fd81-40c5-bb9d-1f79d6c24755"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "3cc6d6c6-fd81-40c5-bb9d-1f79d6c24755"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "3cc6d6c6-fd81-40c5-bb9d-1f79d6c24755"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选09",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲09",
+      "position_a": "虚构研发岗位甲09",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙09",
+      "position_b": "虚构研发岗位乙09",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选09",
+      "intention_city": "北京",
+      "company_a": "虚构公司甲09",
+      "position_a": "虚构研发岗位甲09",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙09",
+      "position_b": "虚构研发岗位乙09",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-09",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5135,
+    "field_timings": [
+      {
+        "field_id": "ff2045b8-a4c6-477d-9e9d-4ec48e1d20ce",
+        "duration_ms": 510.20000000298023
+      },
+      {
+        "field_id": "61c74ddb-6303-4453-a6e0-65fc6fb3049d",
+        "duration_ms": 508.20000000298023
+      },
+      {
+        "field_id": "9ff06111-37ec-4e47-8830-2ad9faa6827c",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "2bd65988-ab28-48e3-9d73-51fdc2c3d8d6",
+        "duration_ms": 507.90000000596046
+      },
+      {
+        "field_id": "dec873e9-9b02-4963-a3fa-53115194343e",
+        "duration_ms": 506.80000001192093
+      },
+      {
+        "field_id": "68f6c743-0d8f-4c89-ace9-c2588a242e9b",
+        "duration_ms": 507.09999999403954
+      },
+      {
+        "field_id": "3e7cccb1-56cf-4f12-b831-52c06919c1e7",
+        "duration_ms": 507.90000000596046
+      },
+      {
+        "field_id": "b1f4d54e-8fc8-4695-a501-5b1baf1e0b28",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "af0faffc-651b-4375-a728-06d8ffadf067",
+        "duration_ms": 508.40000000596046
+      },
+      {
+        "field_id": "093b03b9-f106-473e-b96f-92db4fe13f72",
+        "duration_ms": 507.90000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "1c0cad0c-9347-4f6e-a175-1eee099bea73"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "acb19ef0-6bb8-4083-aa7d-609bf52605d9"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "e16dcb65-c0e7-48cc-bd8d-2ee11d76c126"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "e16dcb65-c0e7-48cc-bd8d-2ee11d76c126"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "e16dcb65-c0e7-48cc-bd8d-2ee11d76c126"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "e16dcb65-c0e7-48cc-bd8d-2ee11d76c126"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "079b3873-d46c-4ee6-97db-afe9fa748b2c"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "079b3873-d46c-4ee6-97db-afe9fa748b2c"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "079b3873-d46c-4ee6-97db-afe9fa748b2c"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "079b3873-d46c-4ee6-97db-afe9fa748b2c"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选10",
+      "email": "synthetic10@example.test",
+      "phone": "13800000010",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "actual_values": {
+      "name": "合成候选10",
+      "email": "synthetic10@example.test",
+      "phone": "13800000010",
+      "current_city": "苏州",
+      "intention_city": "HZ"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-10",
+    "template": "basic",
+    "approved_execution_fields": 5,
+    "expected_fillable_fields": 6,
+    "correct_first_write_fields": 5,
+    "manual_fields": 3,
+    "user_review_actions": 1,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 2566,
+    "field_timings": [
+      {
+        "field_id": "bac3250a-7b5c-4260-b1af-2e8a049b4bdf",
+        "duration_ms": 508.69999998807907
+      },
+      {
+        "field_id": "e9937c08-6126-4ec5-8875-18ee428b4308",
+        "duration_ms": 507.59999999403954
+      },
+      {
+        "field_id": "5d188217-447b-43e4-98ea-0c993173bc30",
+        "duration_ms": 506.80000001192093
+      },
+      {
+        "field_id": "dd9f114b-c1d8-4042-a5cb-6925028d2c91",
+        "duration_ms": 507.6000000089407
+      },
+      {
+        "field_id": "3ddb26e8-68a4-43f6-9815-7966793eea10",
+        "duration_ms": 507.20000000298023
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "fb82d6f2-954b-4881-aa24-382b124b746d"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "fb82d6f2-954b-4881-aa24-382b124b746d"
+      },
+      {
+        "field": "phone",
+        "path": "basic.phone",
+        "decision": "fill",
+        "entity_id": "fb82d6f2-954b-4881-aa24-382b124b746d"
+      },
+      {
+        "field": "current_city",
+        "path": "basic.current_city",
+        "decision": "fill",
+        "entity_id": "fb82d6f2-954b-4881-aa24-382b124b746d"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "a492e94c-7f57-47cc-9d00-7b03b812d187"
+      },
+      {
+        "field": "availability_days",
+        "path": null,
+        "decision": "ask",
+        "entity_id": null
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选10",
+      "email": "synthetic10@example.test",
+      "school": "虚构大学10",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "actual_values": {
+      "name": "合成候选10",
+      "email": "synthetic10@example.test",
+      "school": "虚构大学10",
+      "major": "计算机科学",
+      "degree": "MA",
+      "edu_start": "2019-09",
+      "edu_end": "2023-06"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-10",
+    "template": "education",
+    "approved_execution_fields": 7,
+    "expected_fillable_fields": 8,
+    "correct_first_write_fields": 7,
+    "manual_fields": 3,
+    "user_review_actions": 0,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 3594,
+    "field_timings": [
+      {
+        "field_id": "f4abc15f-13ac-4ef6-864b-abcfda5b2e5f",
+        "duration_ms": 508.59999999403954
+      },
+      {
+        "field_id": "fe954e3f-a8e2-4d29-b008-ba07285f588d",
+        "duration_ms": 510.30000001192093
+      },
+      {
+        "field_id": "c80034ff-9fa4-4b7d-b6e4-2cf42da37a08",
+        "duration_ms": 507.5
+      },
+      {
+        "field_id": "adaa90e2-2a0d-481c-886e-6747eea96d01",
+        "duration_ms": 507.20000000298023
+      },
+      {
+        "field_id": "b92cd1fd-f20b-45bf-af2a-75b0dc204643",
+        "duration_ms": 507
+      },
+      {
+        "field_id": "a1decda9-1c04-42b7-ae32-3015dc5953d6",
+        "duration_ms": 508.19999998807907
+      },
+      {
+        "field_id": "8b2afa71-691a-4a7c-8059-82098c278b68",
+        "duration_ms": 506.90000000596046
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "76a2a563-7581-4d73-9f60-a1701f62b02b"
+      },
+      {
+        "field": "email",
+        "path": "basic.email",
+        "decision": "fill",
+        "entity_id": "76a2a563-7581-4d73-9f60-a1701f62b02b"
+      },
+      {
+        "field": "school",
+        "path": "education.school",
+        "decision": "fill",
+        "entity_id": "f3410595-1231-4c0b-9648-6e14bef39467"
+      },
+      {
+        "field": "major",
+        "path": "education.major",
+        "decision": "fill",
+        "entity_id": "f3410595-1231-4c0b-9648-6e14bef39467"
+      },
+      {
+        "field": "degree",
+        "path": "education.degree",
+        "decision": "fill",
+        "entity_id": "f3410595-1231-4c0b-9648-6e14bef39467"
+      },
+      {
+        "field": "edu_start",
+        "path": "education.start_date",
+        "decision": "fill",
+        "entity_id": "f3410595-1231-4c0b-9648-6e14bef39467"
+      },
+      {
+        "field": "edu_end",
+        "path": "education.end_date",
+        "decision": "fill",
+        "entity_id": "f3410595-1231-4c0b-9648-6e14bef39467"
+      },
+      {
+        "field": "edu_end_day",
+        "path": "education.end_date",
+        "decision": "ask",
+        "entity_id": "f3410595-1231-4c0b-9648-6e14bef39467"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  },
+  {
+    "dataset": "synthetic-1",
+    "expected_values": {
+      "name": "合成候选10",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲10",
+      "position_a": "虚构研发岗位甲10",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙10",
+      "position_b": "虚构研发岗位乙10",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "actual_values": {
+      "name": "合成候选10",
+      "intention_city": "杭州",
+      "company_a": "虚构公司甲10",
+      "position_a": "虚构研发岗位甲10",
+      "start_a": "2023-01",
+      "end_a": "2023-07",
+      "company_b": "虚构公司乙10",
+      "position_b": "虚构研发岗位乙10",
+      "start_b": "2023-04",
+      "end_b": "2023-09"
+    },
+    "adapter_version": "native-0.2.0",
+    "sample_id": "sample-10",
+    "template": "internships",
+    "approved_execution_fields": 10,
+    "expected_fillable_fields": 10,
+    "correct_first_write_fields": 10,
+    "manual_fields": 2,
+    "user_review_actions": 2,
+    "errors": [],
+    "submits": 0,
+    "task_duration_ms": 5125,
+    "field_timings": [
+      {
+        "field_id": "cc81f3a7-1b7e-4d35-95a2-9199216458dc",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "65428d45-0a8c-4419-a235-50ae00acc842",
+        "duration_ms": 506.80000001192093
+      },
+      {
+        "field_id": "bd6ada53-3150-46f5-b204-66aeacb148fe",
+        "duration_ms": 506.70000000298023
+      },
+      {
+        "field_id": "d9b205f9-6788-4dd5-81ab-4806d71b88d3",
+        "duration_ms": 507.29999999701977
+      },
+      {
+        "field_id": "ccfa5f31-2b7a-47a3-9f2d-40d636d1254d",
+        "duration_ms": 508.20000000298023
+      },
+      {
+        "field_id": "76a581dc-5635-4928-98f7-bcecd21fc536",
+        "duration_ms": 506.59999999403954
+      },
+      {
+        "field_id": "eb530a41-4d3b-438c-9c20-b1cae5c83e97",
+        "duration_ms": 506.8999999910593
+      },
+      {
+        "field_id": "e7af436f-5c5a-499c-b05a-f5fb742dc356",
+        "duration_ms": 508.29999999701977
+      },
+      {
+        "field_id": "fcc74aca-e218-4878-bb6b-2ea64b1ef6ec",
+        "duration_ms": 508.40000000596046
+      },
+      {
+        "field_id": "b3c76e6f-2a15-457d-bd66-ef1de582e603",
+        "duration_ms": 507.79999999701977
+      }
+    ],
+    "decisions": [
+      {
+        "field": "name",
+        "path": "basic.name",
+        "decision": "fill",
+        "entity_id": "14b95405-39fe-4ecb-a51d-5a70bc82cba7"
+      },
+      {
+        "field": "intention_city",
+        "path": "intention.city",
+        "decision": "fill",
+        "entity_id": "00336e2f-7c33-4241-af55-d787f125bbe2"
+      },
+      {
+        "field": "company_a",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "22770961-a39d-4af2-ba5d-ca3e541c74a6"
+      },
+      {
+        "field": "position_a",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "22770961-a39d-4af2-ba5d-ca3e541c74a6"
+      },
+      {
+        "field": "start_a",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "22770961-a39d-4af2-ba5d-ca3e541c74a6"
+      },
+      {
+        "field": "end_a",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "22770961-a39d-4af2-ba5d-ca3e541c74a6"
+      },
+      {
+        "field": "company_b",
+        "path": "internship.company",
+        "decision": "fill",
+        "entity_id": "3f01a2d9-7015-47da-9197-b854f6f5a806"
+      },
+      {
+        "field": "position_b",
+        "path": "internship.position",
+        "decision": "fill",
+        "entity_id": "3f01a2d9-7015-47da-9197-b854f6f5a806"
+      },
+      {
+        "field": "start_b",
+        "path": "internship.start_date",
+        "decision": "fill",
+        "entity_id": "3f01a2d9-7015-47da-9197-b854f6f5a806"
+      },
+      {
+        "field": "end_b",
+        "path": "internship.end_date",
+        "decision": "fill",
+        "entity_id": "3f01a2d9-7015-47da-9197-b854f6f5a806"
+      },
+      {
+        "field": "attachment",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      },
+      {
+        "field": "terms",
+        "path": null,
+        "decision": "manual",
+        "entity_id": null
+      }
+    ],
+    "browser": "141.0.7390.37"
+  }
+]

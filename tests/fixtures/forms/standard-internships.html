@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><title>M4 标准模板 internships</title
+  ><style>
+    body {
+      font: 16px sans-serif;
+      max-width: 800px;
+      margin: 24px;
+    }
+    label {
+      display: block;
+      margin: 12px;
+    }
+    input,
+    select {
+      padding: 7px;
+    }
+  </style>
+  <h1>完全虚构的 M4 标准模板 internships</h1>
+  <form>
+    <label>姓名<input id="name" required /></label
+    ><label>意向城市<input id="intention_city" required /></label>
+    <fieldset>
+      <legend>实习经历 a</legend>
+      <label>公司名称<input id="company_a" required /></label
+      ><label>职位<input id="position_a" required /></label
+      ><label>开始时间<input id="start_a" type="month" required /></label
+      ><label>结束时间<input id="end_a" type="month" required /></label>
+    </fieldset>
+    <fieldset>
+      <legend>实习经历 b</legend>
+      <label>公司名称<input id="company_b" required /></label
+      ><label>职位<input id="position_b" required /></label
+      ><label>开始时间<input id="start_b" type="month" required /></label
+      ><label>结束时间<input id="end_b" type="month" required /></label>
+    </fieldset>
+    <label>简历附件<input type="file" id="attachment" /></label
+    ><label><input type="checkbox" id="terms" required />同意招聘隐私条款</label
+    ><input
+      type="password"
+      aria-label="密码"
+      value="STANDARD_SECRET_SENTINEL"
+    /><button type="submit">提交申请（禁止）</button>
+  </form>
+  <script>
+    window.writeEvents = 0;
+    window.submits = 0;
+    document.addEventListener('input', () => window.writeEvents++);
+    document.addEventListener('change', () => window.writeEvents++);
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.submits++;
+    });
+  </script>
+</html>

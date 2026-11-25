@@ -1,0 +1,696 @@
+{
+  "contract_version": 1,
+  "method": "POST",
+  "path": "/v1/fill/verify",
+  "success_status": 200,
+  "available_in": "M4",
+  "available": true,
+  "request": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "schema_version": {
+        "const": 1,
+        "type": "number"
+      },
+      "client_request_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "task_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "plan_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "plan_revision": {
+        "minimum": 1,
+        "type": "integer"
+      },
+      "form_snapshot_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "user_approval": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "approval_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "plan_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "plan_revision": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "plan_digest": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "task_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "profile_revision": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "snapshot_ref": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "task_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "tab_id": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "frame_id": {
+                "const": 0,
+                "type": "number"
+              },
+              "page_instance_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "form_snapshot_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "dom_fingerprint": {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "task_id",
+              "tab_id",
+              "frame_id",
+              "page_instance_id",
+              "form_snapshot_id",
+              "dom_fingerprint"
+            ]
+          },
+          "approved_field_ids": {
+            "minItems": 1,
+            "maxItems": 250,
+            "type": "array",
+            "items": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            }
+          },
+          "approved_at": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "approval_id",
+          "plan_id",
+          "plan_revision",
+          "plan_digest",
+          "task_id",
+          "profile_revision",
+          "snapshot_ref",
+          "approved_field_ids",
+          "approved_at"
+        ]
+      },
+      "execution_report": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "execution_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "started_at": {
+            "type": "integer"
+          },
+          "ended_at": {
+            "type": "integer"
+          },
+          "field_results": {
+            "maxItems": 250,
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "field_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "before": {
+                  "anyOf": [
+                    {
+                      "maxLength": 4096,
+                      "type": "string"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "maxItems": 200,
+                      "type": "array",
+                      "items": {
+                        "maxLength": 4096,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "target": {
+                  "anyOf": [
+                    {
+                      "maxLength": 4096,
+                      "type": "string"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "maxItems": 200,
+                      "type": "array",
+                      "items": {
+                        "maxLength": 4096,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "actual": {
+                  "anyOf": [
+                    {
+                      "maxLength": 4096,
+                      "type": "string"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "maxItems": 200,
+                      "type": "array",
+                      "items": {
+                        "maxLength": 4096,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "status": {
+                  "anyOf": [
+                    {
+                      "const": "verified",
+                      "type": "string"
+                    },
+                    {
+                      "const": "failed",
+                      "type": "string"
+                    },
+                    {
+                      "const": "manual",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "error_code": {
+                  "anyOf": [
+                    {
+                      "maxLength": 80,
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "field_id",
+                "before",
+                "target",
+                "actual",
+                "status",
+                "error_code"
+              ]
+            }
+          }
+        },
+        "required": ["execution_id", "started_at", "ended_at", "field_results"]
+      }
+    },
+    "required": [
+      "schema_version",
+      "client_request_id",
+      "task_id",
+      "plan_id",
+      "plan_revision",
+      "form_snapshot_id",
+      "user_approval",
+      "execution_report"
+    ]
+  },
+  "response": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "data": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "verified_fields": {
+                "maxItems": 250,
+                "type": "array",
+                "items": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                }
+              },
+              "failed_fields": {
+                "maxItems": 250,
+                "type": "array",
+                "items": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                }
+              },
+              "remaining_manual_fields": {
+                "maxItems": 250,
+                "type": "array",
+                "items": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                }
+              },
+              "status": {
+                "const": "REVIEW",
+                "type": "string"
+              },
+              "application_submitted": {
+                "const": false,
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "verified_fields",
+              "failed_fields",
+              "remaining_manual_fields",
+              "status",
+              "application_submitted"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "error": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "code": {
+                "anyOf": [
+                  {
+                    "const": "INVALID_REQUEST",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNAUTHORIZED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCOPE_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONSENT_REQUIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REFERENCE_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SERVICE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "INTERNAL_ERROR",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAYLOAD_TOO_LARGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RATE_LIMITED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REVISION_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_PLAN",
+                    "type": "string"
+                  },
+                  {
+                    "const": "IDEMPOTENCY_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_DOCUMENT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EVIDENCE_INVALID",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RULE_VIOLATION",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_INVALID_OUTPUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_TIMEOUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_REFUSED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAGE_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_SNAPSHOT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "FIELD_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PERMISSION_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_PAGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCAN_LIMIT_EXCEEDED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SNAPSHOT_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_NOT_AVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STORAGE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "TASK_INTERRUPTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_LOCKED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "USER_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "VALUE_NOT_PERSISTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SITE_VALIDATION_FAILED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONTROL_UNSUPPORTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "LOCATOR_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_INTERRUPTED",
+                    "type": "string"
+                  }
+                ]
+              },
+              "message": {
+                "maxLength": 200,
+                "type": "string"
+              },
+              "retryable": {
+                "type": "boolean"
+              },
+              "details": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "required": ["code", "message", "retryable", "details"]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  },
+  "failure": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string"
+      },
+      "data": {
+        "type": "null"
+      },
+      "error": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "const": "INVALID_REQUEST",
+                "type": "string"
+              },
+              {
+                "const": "UNAUTHORIZED",
+                "type": "string"
+              },
+              {
+                "const": "SCOPE_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "CONSENT_REQUIRED",
+                "type": "string"
+              },
+              {
+                "const": "REFERENCE_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "SERVICE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "INTERNAL_ERROR",
+                "type": "string"
+              },
+              {
+                "const": "PAYLOAD_TOO_LARGE",
+                "type": "string"
+              },
+              {
+                "const": "RATE_LIMITED",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "REVISION_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "STALE_PLAN",
+                "type": "string"
+              },
+              {
+                "const": "IDEMPOTENCY_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_DOCUMENT",
+                "type": "string"
+              },
+              {
+                "const": "EVIDENCE_INVALID",
+                "type": "string"
+              },
+              {
+                "const": "RULE_VIOLATION",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_INVALID_OUTPUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_TIMEOUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_REFUSED",
+                "type": "string"
+              },
+              {
+                "const": "PAGE_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "STALE_SNAPSHOT",
+                "type": "string"
+              },
+              {
+                "const": "FIELD_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "PERMISSION_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_PAGE",
+                "type": "string"
+              },
+              {
+                "const": "SCAN_LIMIT_EXCEEDED",
+                "type": "string"
+              },
+              {
+                "const": "SNAPSHOT_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_NOT_AVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "STORAGE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "TASK_INTERRUPTED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_LOCKED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "USER_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "VALUE_NOT_PERSISTED",
+                "type": "string"
+              },
+              {
+                "const": "SITE_VALIDATION_FAILED",
+                "type": "string"
+              },
+              {
+                "const": "CONTROL_UNSUPPORTED",
+                "type": "string"
+              },
+              {
+                "const": "LOCATOR_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_INTERRUPTED",
+                "type": "string"
+              }
+            ]
+          },
+          "message": {
+            "maxLength": 200,
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "details": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "required": ["code", "message", "retryable", "details"]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  }
+}

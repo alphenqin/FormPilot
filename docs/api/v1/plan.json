@@ -1,0 +1,2571 @@
+{
+  "contract_version": 1,
+  "method": "POST",
+  "path": "/v1/fill/plan",
+  "success_status": 200,
+  "request": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "schema_version": {
+        "const": 1,
+        "type": "number"
+      },
+      "client_request_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "task_id": {
+        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+        "type": "string"
+      },
+      "expected_plan_revision": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "profile_revision": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "form_snapshot": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "task_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "tab_id": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "frame_id": {
+            "const": 0,
+            "type": "number"
+          },
+          "page_instance_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "form_snapshot_id": {
+            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+            "type": "string"
+          },
+          "dom_fingerprint": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "protocol_version": {
+            "const": "1",
+            "type": "string"
+          },
+          "snapshot_revision": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "origin": {
+            "maxLength": 300,
+            "type": "string"
+          },
+          "route": {
+            "maxLength": 300,
+            "type": "string"
+          },
+          "adapter_version": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "site_id": {
+            "maxLength": 50,
+            "type": "string"
+          },
+          "captured_at": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "duration_ms": {
+            "minimum": 0,
+            "type": "number"
+          },
+          "complete": {
+            "type": "boolean"
+          },
+          "fields": {
+            "maxItems": 250,
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "field_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "locator_ref": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "group_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "form_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "label": {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                "label_source": {
+                  "maxLength": 40,
+                  "type": "string"
+                },
+                "manual_label": {
+                  "anyOf": [
+                    {
+                      "maxLength": 200,
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "description": {
+                  "maxLength": 500,
+                  "type": "string"
+                },
+                "name": {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                "html_id": {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                "placeholder": {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                "control_type": {
+                  "maxLength": 40,
+                  "type": "string"
+                },
+                "required": {
+                  "type": "boolean"
+                },
+                "visible": {
+                  "const": true,
+                  "type": "boolean"
+                },
+                "enabled": {
+                  "type": "boolean"
+                },
+                "read_only": {
+                  "type": "boolean"
+                },
+                "supported": {
+                  "type": "boolean"
+                },
+                "manual_reason": {
+                  "anyOf": [
+                    {
+                      "maxLength": 80,
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "current_value": {
+                  "anyOf": [
+                    {
+                      "maxLength": 4096,
+                      "type": "string"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "maxItems": 200,
+                      "type": "array",
+                      "items": {
+                        "maxLength": 4096,
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "options": {
+                  "maxItems": 200,
+                  "type": "array",
+                  "items": {
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "maxLength": 4096,
+                        "type": "string"
+                      },
+                      "label": {
+                        "maxLength": 200,
+                        "type": "string"
+                      },
+                      "disabled": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": ["value", "label", "disabled"]
+                  }
+                },
+                "option_count": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "constraints": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "anyOf": [
+                        {
+                          "maxLength": 200,
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "max": {
+                      "anyOf": [
+                        {
+                          "maxLength": 200,
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "step": {
+                      "anyOf": [
+                        {
+                          "maxLength": 100,
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "pattern": {
+                      "anyOf": [
+                        {
+                          "maxLength": 500,
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "min_length": {
+                      "anyOf": [
+                        {
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "max_length": {
+                      "anyOf": [
+                        {
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "accept": {
+                      "anyOf": [
+                        {
+                          "maxLength": 500,
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "multiple": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "min",
+                    "max",
+                    "step",
+                    "pattern",
+                    "min_length",
+                    "max_length",
+                    "accept",
+                    "multiple"
+                  ]
+                }
+              },
+              "required": [
+                "field_id",
+                "locator_ref",
+                "group_id",
+                "form_id",
+                "label",
+                "label_source",
+                "manual_label",
+                "description",
+                "name",
+                "html_id",
+                "placeholder",
+                "control_type",
+                "required",
+                "visible",
+                "enabled",
+                "read_only",
+                "supported",
+                "manual_reason",
+                "current_value",
+                "options",
+                "option_count",
+                "constraints"
+              ]
+            }
+          },
+          "groups": {
+            "maxItems": 500,
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "group_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "form_id": {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                "label": {
+                  "maxLength": 200,
+                  "type": "string"
+                },
+                "parent_group_id": {
+                  "anyOf": [
+                    {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": ["group_id", "form_id", "label", "parent_group_id"]
+            }
+          },
+          "warnings": {
+            "maxItems": 30,
+            "type": "array",
+            "items": {
+              "additionalProperties": false,
+              "type": "object",
+              "properties": {
+                "code": {
+                  "maxLength": 80,
+                  "type": "string"
+                },
+                "count": {
+                  "minimum": 0,
+                  "type": "integer"
+                }
+              },
+              "required": ["code", "count"]
+            }
+          },
+          "excluded": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "hidden": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "sensitive": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "actions": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": ["hidden", "sensitive", "actions"]
+          }
+        },
+        "required": [
+          "task_id",
+          "tab_id",
+          "frame_id",
+          "page_instance_id",
+          "form_snapshot_id",
+          "dom_fingerprint",
+          "protocol_version",
+          "snapshot_revision",
+          "origin",
+          "route",
+          "adapter_version",
+          "site_id",
+          "captured_at",
+          "duration_ms",
+          "complete",
+          "fields",
+          "groups",
+          "warnings",
+          "excluded"
+        ]
+      },
+      "confirmed_facts": {
+        "maxItems": 250,
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "fact_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "fact_revision": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "profile_revision": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "category": {
+              "anyOf": [
+                {
+                  "const": "basic",
+                  "type": "string"
+                },
+                {
+                  "const": "education",
+                  "type": "string"
+                },
+                {
+                  "const": "work",
+                  "type": "string"
+                },
+                {
+                  "const": "internship",
+                  "type": "string"
+                },
+                {
+                  "const": "project",
+                  "type": "string"
+                },
+                {
+                  "const": "skill",
+                  "type": "string"
+                },
+                {
+                  "const": "certificate",
+                  "type": "string"
+                },
+                {
+                  "const": "intention",
+                  "type": "string"
+                }
+              ]
+            },
+            "path": {
+              "anyOf": [
+                {
+                  "const": "basic.name",
+                  "type": "string"
+                },
+                {
+                  "const": "basic.gender",
+                  "type": "string"
+                },
+                {
+                  "const": "basic.phone",
+                  "type": "string"
+                },
+                {
+                  "const": "basic.email",
+                  "type": "string"
+                },
+                {
+                  "const": "basic.current_city",
+                  "type": "string"
+                },
+                {
+                  "const": "education.school",
+                  "type": "string"
+                },
+                {
+                  "const": "education.major",
+                  "type": "string"
+                },
+                {
+                  "const": "education.degree",
+                  "type": "string"
+                },
+                {
+                  "const": "education.start_date",
+                  "type": "string"
+                },
+                {
+                  "const": "education.end_date",
+                  "type": "string"
+                },
+                {
+                  "const": "work.company",
+                  "type": "string"
+                },
+                {
+                  "const": "work.position",
+                  "type": "string"
+                },
+                {
+                  "const": "work.department",
+                  "type": "string"
+                },
+                {
+                  "const": "work.start_date",
+                  "type": "string"
+                },
+                {
+                  "const": "work.end_date",
+                  "type": "string"
+                },
+                {
+                  "const": "work.description",
+                  "type": "string"
+                },
+                {
+                  "const": "internship.company",
+                  "type": "string"
+                },
+                {
+                  "const": "internship.position",
+                  "type": "string"
+                },
+                {
+                  "const": "internship.start_date",
+                  "type": "string"
+                },
+                {
+                  "const": "internship.end_date",
+                  "type": "string"
+                },
+                {
+                  "const": "internship.description",
+                  "type": "string"
+                },
+                {
+                  "const": "project.name",
+                  "type": "string"
+                },
+                {
+                  "const": "project.role",
+                  "type": "string"
+                },
+                {
+                  "const": "project.start_date",
+                  "type": "string"
+                },
+                {
+                  "const": "project.end_date",
+                  "type": "string"
+                },
+                {
+                  "const": "project.description",
+                  "type": "string"
+                },
+                {
+                  "const": "skill.name",
+                  "type": "string"
+                },
+                {
+                  "const": "skill.level",
+                  "type": "string"
+                },
+                {
+                  "const": "certificate.name",
+                  "type": "string"
+                },
+                {
+                  "const": "certificate.date",
+                  "type": "string"
+                },
+                {
+                  "const": "certificate.number",
+                  "type": "string"
+                },
+                {
+                  "const": "intention.city",
+                  "type": "string"
+                },
+                {
+                  "const": "intention.industry",
+                  "type": "string"
+                },
+                {
+                  "const": "intention.position",
+                  "type": "string"
+                },
+                {
+                  "const": "intention.salary",
+                  "type": "string"
+                }
+              ]
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "minLength": 1,
+                  "maxLength": 3000,
+                  "type": "string"
+                },
+                {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "maxLength": 10,
+                      "type": "string"
+                    },
+                    "precision": {
+                      "anyOf": [
+                        {
+                          "const": "year",
+                          "type": "string"
+                        },
+                        {
+                          "const": "month",
+                          "type": "string"
+                        },
+                        {
+                          "const": "day",
+                          "type": "string"
+                        },
+                        {
+                          "const": "present",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": ["value", "precision"]
+                }
+              ]
+            },
+            "entity_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "confirmation": {
+              "const": "confirmed",
+              "type": "string"
+            },
+            "source_type": {
+              "anyOf": [
+                {
+                  "const": "resume",
+                  "type": "string"
+                },
+                {
+                  "const": "user",
+                  "type": "string"
+                }
+              ]
+            },
+            "evidence_ids": {
+              "maxItems": 20,
+              "type": "array",
+              "items": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              }
+            },
+            "document_id": {
+              "anyOf": [
+                {
+                  "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "fact_id",
+            "fact_revision",
+            "profile_revision",
+            "category",
+            "path",
+            "value",
+            "entity_id",
+            "confirmation",
+            "source_type",
+            "evidence_ids",
+            "document_id"
+          ]
+        }
+      },
+      "entities": {
+        "maxItems": 100,
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "entity_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "category": {
+              "anyOf": [
+                {
+                  "const": "basic",
+                  "type": "string"
+                },
+                {
+                  "const": "education",
+                  "type": "string"
+                },
+                {
+                  "const": "work",
+                  "type": "string"
+                },
+                {
+                  "const": "internship",
+                  "type": "string"
+                },
+                {
+                  "const": "project",
+                  "type": "string"
+                },
+                {
+                  "const": "skill",
+                  "type": "string"
+                },
+                {
+                  "const": "certificate",
+                  "type": "string"
+                },
+                {
+                  "const": "intention",
+                  "type": "string"
+                }
+              ]
+            },
+            "label": {
+              "maxLength": 200,
+              "type": "string"
+            }
+          },
+          "required": ["entity_id", "category", "label"]
+        }
+      },
+      "evidences": {
+        "maxItems": 500,
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "evidence_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "document_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "document_revision": {
+              "const": 1,
+              "type": "number"
+            },
+            "block_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "page": {
+              "anyOf": [
+                {
+                  "minimum": 1,
+                  "maximum": 100,
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "quote": {
+              "minLength": 1,
+              "maxLength": 1600,
+              "type": "string"
+            },
+            "start": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "end": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "evidence_id",
+            "document_id",
+            "document_revision",
+            "block_id",
+            "page",
+            "quote",
+            "start",
+            "end"
+          ]
+        }
+      },
+      "task_answers": {
+        "maxItems": 250,
+        "type": "array",
+        "items": {
+          "additionalProperties": false,
+          "type": "object",
+          "properties": {
+            "answer_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "question_id": {
+              "pattern": "^[a-zA-Z0-9-]{1,80}$",
+              "type": "string"
+            },
+            "semantic_key": {
+              "minLength": 1,
+              "maxLength": 1000,
+              "type": "string"
+            },
+            "field_ids": {
+              "minItems": 1,
+              "maxItems": 250,
+              "type": "array",
+              "items": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              }
+            },
+            "value": {
+              "anyOf": [
+                {
+                  "maxLength": 4096,
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "maxItems": 200,
+                  "type": "array",
+                  "items": {
+                    "maxLength": 4096,
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "precision": {
+              "anyOf": [
+                {
+                  "anyOf": [
+                    {
+                      "const": "year",
+                      "type": "string"
+                    },
+                    {
+                      "const": "month",
+                      "type": "string"
+                    },
+                    {
+                      "const": "day",
+                      "type": "string"
+                    },
+                    {
+                      "const": "present",
+                      "type": "string"
+                    }
+                  ]
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "scope": {
+              "const": "task",
+              "type": "string"
+            },
+            "source": {
+              "const": "user",
+              "type": "string"
+            },
+            "revision": {
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "answer_id",
+            "question_id",
+            "semantic_key",
+            "field_ids",
+            "value",
+            "precision",
+            "scope",
+            "source",
+            "revision"
+          ]
+        }
+      },
+      "consent": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "granted": {
+            "const": true,
+            "type": "boolean"
+          },
+          "purpose": {
+            "const": "fill_plan",
+            "type": "string"
+          },
+          "provider": {
+            "minLength": 1,
+            "maxLength": 80,
+            "type": "string"
+          },
+          "model": {
+            "minLength": 1,
+            "maxLength": 100,
+            "type": "string"
+          },
+          "policy_url": {
+            "maxLength": 500,
+            "type": "string"
+          },
+          "payload_hash": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "granted_at": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "granted",
+          "purpose",
+          "provider",
+          "model",
+          "policy_url",
+          "payload_hash",
+          "granted_at"
+        ]
+      }
+    },
+    "required": [
+      "schema_version",
+      "client_request_id",
+      "task_id",
+      "expected_plan_revision",
+      "profile_revision",
+      "form_snapshot",
+      "confirmed_facts",
+      "entities",
+      "evidences",
+      "task_answers",
+      "consent"
+    ]
+  },
+  "response": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "data": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "schema_version": {
+                "const": 1,
+                "type": "number"
+              },
+              "plan_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "plan_revision": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "task_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "profile_revision": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "snapshot_ref": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {
+                  "task_id": {
+                    "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                    "type": "string"
+                  },
+                  "tab_id": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "frame_id": {
+                    "const": 0,
+                    "type": "number"
+                  },
+                  "page_instance_id": {
+                    "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                    "type": "string"
+                  },
+                  "form_snapshot_id": {
+                    "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                    "type": "string"
+                  },
+                  "dom_fingerprint": {
+                    "pattern": "^[a-f0-9]{64}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "task_id",
+                  "tab_id",
+                  "frame_id",
+                  "page_instance_id",
+                  "form_snapshot_id",
+                  "dom_fingerprint"
+                ]
+              },
+              "form_snapshot_id": {
+                "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                "type": "string"
+              },
+              "dom_fingerprint": {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              "field_decisions": {
+                "maxItems": 250,
+                "type": "array",
+                "items": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "field_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "field_label": {
+                      "maxLength": 200,
+                      "type": "string"
+                    },
+                    "group_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "entity_group_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "semantic_path": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "const": "basic.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.gender",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.phone",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.email",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.current_city",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.school",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.major",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.degree",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.company",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.position",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.department",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.description",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.company",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.position",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.description",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.role",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.description",
+                              "type": "string"
+                            },
+                            {
+                              "const": "skill.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "skill.level",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate.date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate.number",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.city",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.industry",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.position",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.salary",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "decision": {
+                      "anyOf": [
+                        {
+                          "const": "fill",
+                          "type": "string"
+                        },
+                        {
+                          "const": "ask",
+                          "type": "string"
+                        },
+                        {
+                          "const": "review",
+                          "type": "string"
+                        },
+                        {
+                          "const": "manual",
+                          "type": "string"
+                        },
+                        {
+                          "const": "skip",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "current_value": {
+                      "anyOf": [
+                        {
+                          "maxLength": 4096,
+                          "type": "string"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "maxItems": 200,
+                          "type": "array",
+                          "items": {
+                            "maxLength": 4096,
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "target_value": {
+                      "anyOf": [
+                        {
+                          "maxLength": 4096,
+                          "type": "string"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "maxItems": 200,
+                          "type": "array",
+                          "items": {
+                            "maxLength": 4096,
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "candidate_value": {
+                      "anyOf": [
+                        {
+                          "maxLength": 4096,
+                          "type": "string"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "maxItems": 200,
+                          "type": "array",
+                          "items": {
+                            "maxLength": 4096,
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "fact_refs": {
+                      "maxItems": 20,
+                      "type": "array",
+                      "items": {
+                        "additionalProperties": false,
+                        "type": "object",
+                        "properties": {
+                          "fact_id": {
+                            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                            "type": "string"
+                          },
+                          "fact_revision": {
+                            "minimum": 1,
+                            "type": "integer"
+                          }
+                        },
+                        "required": ["fact_id", "fact_revision"]
+                      }
+                    },
+                    "answer_refs": {
+                      "maxItems": 20,
+                      "type": "array",
+                      "items": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      }
+                    },
+                    "evidence_ids": {
+                      "maxItems": 100,
+                      "type": "array",
+                      "items": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      }
+                    },
+                    "entity_id": {
+                      "anyOf": [
+                        {
+                          "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "reason_code": {
+                      "maxLength": 80,
+                      "type": "string"
+                    },
+                    "value_precision": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "const": "year",
+                              "type": "string"
+                            },
+                            {
+                              "const": "month",
+                              "type": "string"
+                            },
+                            {
+                              "const": "day",
+                              "type": "string"
+                            },
+                            {
+                              "const": "present",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "replacement_confirmed": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "field_id",
+                    "field_label",
+                    "group_id",
+                    "entity_group_id",
+                    "semantic_path",
+                    "decision",
+                    "current_value",
+                    "target_value",
+                    "candidate_value",
+                    "fact_refs",
+                    "answer_refs",
+                    "evidence_ids",
+                    "entity_id",
+                    "reason_code",
+                    "value_precision",
+                    "replacement_confirmed"
+                  ]
+                }
+              },
+              "questions": {
+                "maxItems": 500,
+                "type": "array",
+                "items": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "question_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "semantic_key": {
+                      "minLength": 1,
+                      "maxLength": 1000,
+                      "type": "string"
+                    },
+                    "field_ids": {
+                      "minItems": 1,
+                      "maxItems": 250,
+                      "type": "array",
+                      "items": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      }
+                    },
+                    "kind": {
+                      "anyOf": [
+                        {
+                          "const": "value",
+                          "type": "string"
+                        },
+                        {
+                          "const": "entity",
+                          "type": "string"
+                        },
+                        {
+                          "const": "mapping",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "semantic_path": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "const": "basic.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.gender",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.phone",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.email",
+                              "type": "string"
+                            },
+                            {
+                              "const": "basic.current_city",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.school",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.major",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.degree",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.company",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.position",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.department",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work.description",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.company",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.position",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship.description",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.role",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.start_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.end_date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project.description",
+                              "type": "string"
+                            },
+                            {
+                              "const": "skill.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "skill.level",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate.name",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate.date",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate.number",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.city",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.industry",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.position",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention.salary",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "group_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "category": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "const": "basic",
+                              "type": "string"
+                            },
+                            {
+                              "const": "education",
+                              "type": "string"
+                            },
+                            {
+                              "const": "work",
+                              "type": "string"
+                            },
+                            {
+                              "const": "internship",
+                              "type": "string"
+                            },
+                            {
+                              "const": "project",
+                              "type": "string"
+                            },
+                            {
+                              "const": "skill",
+                              "type": "string"
+                            },
+                            {
+                              "const": "certificate",
+                              "type": "string"
+                            },
+                            {
+                              "const": "intention",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "prompt": {
+                      "minLength": 1,
+                      "maxLength": 300,
+                      "type": "string"
+                    },
+                    "answer_type": {
+                      "anyOf": [
+                        {
+                          "const": "text",
+                          "type": "string"
+                        },
+                        {
+                          "const": "single",
+                          "type": "string"
+                        },
+                        {
+                          "const": "multiple",
+                          "type": "string"
+                        },
+                        {
+                          "const": "date",
+                          "type": "string"
+                        },
+                        {
+                          "const": "month",
+                          "type": "string"
+                        },
+                        {
+                          "const": "number",
+                          "type": "string"
+                        },
+                        {
+                          "const": "boolean",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "options": {
+                      "maxItems": 200,
+                      "type": "array",
+                      "items": {
+                        "additionalProperties": false,
+                        "type": "object",
+                        "properties": {
+                          "value": {
+                            "maxLength": 4096,
+                            "type": "string"
+                          },
+                          "label": {
+                            "maxLength": 200,
+                            "type": "string"
+                          }
+                        },
+                        "required": ["value", "label"]
+                      }
+                    },
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "current_answer": {
+                      "anyOf": [
+                        {
+                          "maxLength": 4096,
+                          "type": "string"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "maxItems": 200,
+                          "type": "array",
+                          "items": {
+                            "maxLength": 4096,
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "source": {
+                      "const": "user",
+                      "type": "string"
+                    },
+                    "scope": {
+                      "const": "task",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "question_id",
+                    "semantic_key",
+                    "field_ids",
+                    "kind",
+                    "semantic_path",
+                    "group_id",
+                    "category",
+                    "prompt",
+                    "answer_type",
+                    "options",
+                    "required",
+                    "current_answer",
+                    "source",
+                    "scope"
+                  ]
+                }
+              },
+              "task_answers": {
+                "maxItems": 500,
+                "type": "array",
+                "items": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "answer_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "question_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "semantic_key": {
+                      "minLength": 1,
+                      "maxLength": 1000,
+                      "type": "string"
+                    },
+                    "field_ids": {
+                      "minItems": 1,
+                      "maxItems": 250,
+                      "type": "array",
+                      "items": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      }
+                    },
+                    "value": {
+                      "anyOf": [
+                        {
+                          "maxLength": 4096,
+                          "type": "string"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "maxItems": 200,
+                          "type": "array",
+                          "items": {
+                            "maxLength": 4096,
+                            "type": "string"
+                          }
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "precision": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "const": "year",
+                              "type": "string"
+                            },
+                            {
+                              "const": "month",
+                              "type": "string"
+                            },
+                            {
+                              "const": "day",
+                              "type": "string"
+                            },
+                            {
+                              "const": "present",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "scope": {
+                      "const": "task",
+                      "type": "string"
+                    },
+                    "source": {
+                      "const": "user",
+                      "type": "string"
+                    },
+                    "revision": {
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "answer_id",
+                    "question_id",
+                    "semantic_key",
+                    "field_ids",
+                    "value",
+                    "precision",
+                    "scope",
+                    "source",
+                    "revision"
+                  ]
+                }
+              },
+              "entity_bindings": {
+                "maxItems": 500,
+                "type": "array",
+                "items": {
+                  "additionalProperties": false,
+                  "type": "object",
+                  "properties": {
+                    "group_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "category": {
+                      "anyOf": [
+                        {
+                          "const": "basic",
+                          "type": "string"
+                        },
+                        {
+                          "const": "education",
+                          "type": "string"
+                        },
+                        {
+                          "const": "work",
+                          "type": "string"
+                        },
+                        {
+                          "const": "internship",
+                          "type": "string"
+                        },
+                        {
+                          "const": "project",
+                          "type": "string"
+                        },
+                        {
+                          "const": "skill",
+                          "type": "string"
+                        },
+                        {
+                          "const": "certificate",
+                          "type": "string"
+                        },
+                        {
+                          "const": "intention",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "entity_id": {
+                      "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                      "type": "string"
+                    },
+                    "source": {
+                      "anyOf": [
+                        {
+                          "const": "rule",
+                          "type": "string"
+                        },
+                        {
+                          "const": "user",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": ["group_id", "category", "entity_id", "source"]
+                }
+              },
+              "degraded": {
+                "type": "boolean"
+              },
+              "degraded_reason": {
+                "anyOf": [
+                  {
+                    "maxLength": 80,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "plan_digest": {
+                "pattern": "^[a-f0-9]{64}$",
+                "type": "string"
+              },
+              "created_at": {
+                "type": "integer"
+              },
+              "expires_at": {
+                "type": "integer"
+              },
+              "duration_ms": {
+                "minimum": 0,
+                "type": "number"
+              },
+              "usage": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {
+                  "input_tokens": {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "output_tokens": {
+                    "minimum": 0,
+                    "type": "integer"
+                  }
+                },
+                "required": ["input_tokens", "output_tokens"]
+              },
+              "application_submitted": {
+                "const": false,
+                "type": "boolean"
+              },
+              "status": {
+                "anyOf": [
+                  {
+                    "const": "DRAFT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PLANNED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "WAITING_USER",
+                    "type": "string"
+                  },
+                  {
+                    "const": "READY",
+                    "type": "string"
+                  },
+                  {
+                    "const": "WRITING",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REVIEW",
+                    "type": "string"
+                  }
+                ]
+              },
+              "state_revision": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "user_approval": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "type": "object",
+                    "properties": {
+                      "approval_id": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      },
+                      "plan_id": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      },
+                      "plan_revision": {
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "plan_digest": {
+                        "pattern": "^[a-f0-9]{64}$",
+                        "type": "string"
+                      },
+                      "task_id": {
+                        "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                        "type": "string"
+                      },
+                      "profile_revision": {
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "snapshot_ref": {
+                        "additionalProperties": false,
+                        "type": "object",
+                        "properties": {
+                          "task_id": {
+                            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                            "type": "string"
+                          },
+                          "tab_id": {
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "frame_id": {
+                            "const": 0,
+                            "type": "number"
+                          },
+                          "page_instance_id": {
+                            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                            "type": "string"
+                          },
+                          "form_snapshot_id": {
+                            "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                            "type": "string"
+                          },
+                          "dom_fingerprint": {
+                            "pattern": "^[a-f0-9]{64}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "task_id",
+                          "tab_id",
+                          "frame_id",
+                          "page_instance_id",
+                          "form_snapshot_id",
+                          "dom_fingerprint"
+                        ]
+                      },
+                      "approved_field_ids": {
+                        "minItems": 1,
+                        "maxItems": 250,
+                        "type": "array",
+                        "items": {
+                          "pattern": "^[a-zA-Z0-9-]{1,80}$",
+                          "type": "string"
+                        }
+                      },
+                      "approved_at": {
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "approval_id",
+                      "plan_id",
+                      "plan_revision",
+                      "plan_digest",
+                      "task_id",
+                      "profile_revision",
+                      "snapshot_ref",
+                      "approved_field_ids",
+                      "approved_at"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "invalid_reason": {
+                "anyOf": [
+                  {
+                    "maxLength": 80,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "schema_version",
+              "plan_id",
+              "plan_revision",
+              "task_id",
+              "profile_revision",
+              "snapshot_ref",
+              "form_snapshot_id",
+              "dom_fingerprint",
+              "field_decisions",
+              "questions",
+              "task_answers",
+              "entity_bindings",
+              "degraded",
+              "degraded_reason",
+              "plan_digest",
+              "created_at",
+              "expires_at",
+              "duration_ms",
+              "usage",
+              "application_submitted",
+              "status",
+              "state_revision",
+              "user_approval",
+              "invalid_reason"
+            ]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "error": {
+        "anyOf": [
+          {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {
+              "code": {
+                "anyOf": [
+                  {
+                    "const": "INVALID_REQUEST",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNAUTHORIZED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCOPE_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONSENT_REQUIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REFERENCE_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SERVICE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "INTERNAL_ERROR",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAYLOAD_TOO_LARGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RATE_LIMITED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "REVISION_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_PLAN",
+                    "type": "string"
+                  },
+                  {
+                    "const": "IDEMPOTENCY_CONFLICT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_DOCUMENT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EVIDENCE_INVALID",
+                    "type": "string"
+                  },
+                  {
+                    "const": "RULE_VIOLATION",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_INVALID_OUTPUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_TIMEOUT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "MODEL_REFUSED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PAGE_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STALE_SNAPSHOT",
+                    "type": "string"
+                  },
+                  {
+                    "const": "FIELD_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "PERMISSION_DENIED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "UNSUPPORTED_PAGE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SCAN_LIMIT_EXCEEDED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SNAPSHOT_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_NOT_AVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "STORAGE_UNAVAILABLE",
+                    "type": "string"
+                  },
+                  {
+                    "const": "TASK_INTERRUPTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_LOCKED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_EXPIRED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "USER_CHANGED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "VALUE_NOT_PERSISTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "SITE_VALIDATION_FAILED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "CONTROL_UNSUPPORTED",
+                    "type": "string"
+                  },
+                  {
+                    "const": "LOCATOR_NOT_FOUND",
+                    "type": "string"
+                  },
+                  {
+                    "const": "EXECUTION_INTERRUPTED",
+                    "type": "string"
+                  }
+                ]
+              },
+              "message": {
+                "maxLength": 200,
+                "type": "string"
+              },
+              "retryable": {
+                "type": "boolean"
+              },
+              "details": {
+                "additionalProperties": false,
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "required": ["code", "message", "retryable", "details"]
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  },
+  "failure": {
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+      "request_id": {
+        "type": "string"
+      },
+      "data": {
+        "type": "null"
+      },
+      "error": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "code": {
+            "anyOf": [
+              {
+                "const": "INVALID_REQUEST",
+                "type": "string"
+              },
+              {
+                "const": "UNAUTHORIZED",
+                "type": "string"
+              },
+              {
+                "const": "SCOPE_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "CONSENT_REQUIRED",
+                "type": "string"
+              },
+              {
+                "const": "REFERENCE_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "SERVICE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "INTERNAL_ERROR",
+                "type": "string"
+              },
+              {
+                "const": "PAYLOAD_TOO_LARGE",
+                "type": "string"
+              },
+              {
+                "const": "RATE_LIMITED",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "REVISION_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "STALE_PLAN",
+                "type": "string"
+              },
+              {
+                "const": "IDEMPOTENCY_CONFLICT",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_DOCUMENT",
+                "type": "string"
+              },
+              {
+                "const": "EVIDENCE_INVALID",
+                "type": "string"
+              },
+              {
+                "const": "RULE_VIOLATION",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_INVALID_OUTPUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_TIMEOUT",
+                "type": "string"
+              },
+              {
+                "const": "MODEL_REFUSED",
+                "type": "string"
+              },
+              {
+                "const": "PAGE_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "STALE_SNAPSHOT",
+                "type": "string"
+              },
+              {
+                "const": "FIELD_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "PERMISSION_DENIED",
+                "type": "string"
+              },
+              {
+                "const": "UNSUPPORTED_PAGE",
+                "type": "string"
+              },
+              {
+                "const": "SCAN_LIMIT_EXCEEDED",
+                "type": "string"
+              },
+              {
+                "const": "SNAPSHOT_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_NOT_AVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "STORAGE_UNAVAILABLE",
+                "type": "string"
+              },
+              {
+                "const": "TASK_INTERRUPTED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_LOCKED",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_EXPIRED",
+                "type": "string"
+              },
+              {
+                "const": "USER_CHANGED",
+                "type": "string"
+              },
+              {
+                "const": "VALUE_NOT_PERSISTED",
+                "type": "string"
+              },
+              {
+                "const": "SITE_VALIDATION_FAILED",
+                "type": "string"
+              },
+              {
+                "const": "CONTROL_UNSUPPORTED",
+                "type": "string"
+              },
+              {
+                "const": "LOCATOR_NOT_FOUND",
+                "type": "string"
+              },
+              {
+                "const": "EXECUTION_INTERRUPTED",
+                "type": "string"
+              }
+            ]
+          },
+          "message": {
+            "maxLength": 200,
+            "type": "string"
+          },
+          "retryable": {
+            "type": "boolean"
+          },
+          "details": {
+            "additionalProperties": false,
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "required": ["code", "message", "retryable", "details"]
+      }
+    },
+    "required": ["request_id", "data", "error"]
+  }
+}
